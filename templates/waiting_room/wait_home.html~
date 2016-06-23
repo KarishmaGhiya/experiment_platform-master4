@@ -1,0 +1,16 @@
+{% extends 'experiment/waiting_room.html' %}
+
+{% block way %}
+<h2> To go to Forum section: </h2>
+    <a href="{% url 'forumapp' %}">Forum</a>&nbsp;| &nbsp;
+  	</br>
+<h3> I AM SO GLAD YOU ARE HERE IN THE WAIT MODULE </h3>
+<h2> To go to chat section: </h2>
+    <a href="{% url 'chatapp' %}">Chat</a>&nbsp;| &nbsp;
+{% endblock %}
+
+{% block afterbody %}
+  <script type="text/javascript" src='{% static "jquery-1.12.1.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "reconnecting-websocket.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "wait.js" %}'></script>
+{% endblock afterbody %}

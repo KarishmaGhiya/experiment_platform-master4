@@ -1,0 +1,8 @@
+{% extends 'blog/base_exp.html' %}
+
+{% block content %}
+
+    <h2> Congratulations! You have completed the task & solved the mystery! </h2>
+<h2> Start Again? Go to the waiting room! </h2>
+<a href="{% url 'waiting_room' %}">Wait Room</a>&nbsp;| &nbsp;	
+{% endblock %}

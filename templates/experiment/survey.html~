@@ -1,0 +1,9 @@
+{% extends 'blog/base_exp.html' %}
+
+{% block content %}
+<a href="{% url 'finish' %}">Finish Survey</a>&nbsp;| &nbsp;
+    <h2> Please answer the following questions: </h2>
+	<h3> Question 1 </h3>
+	<h3> Question 2 </h3>
+	<h3> Question 3 </h3>
+{% endblock %}

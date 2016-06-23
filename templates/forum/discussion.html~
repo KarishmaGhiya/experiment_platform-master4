@@ -1,0 +1,71 @@
+{% extends "base_forum.html" %}
+
+{% block content %}
+  {% load staticfiles %}
+  <h1>{{ discussion.label }}</h1>
+  <p class="quiet">
+    Anyone with this URL can join the discussion forum: 
+    <code>{{ request.scheme }}://{{ request.get_host }}/{{ discussion.label }}</code> 
+  </p>
+ 
+  <form id="chatform">
+    <table id="chat">
+      <section>
+      <tbody>
+        {% for statement in statements %}
+	 <!--tr>
+	 
+            <td>{{ statement.handle }}</td>
+            <td>{{ statement.formatted_timestamp }}</td>
+            <td>{{ statement.message }}</td>
+          </tr-->
+          
+
+
+
+
+	<tr>
+	  <th rowspan="3"></th>
+	  	<td><b>{{ statement.handle }}</b></td>	
+	  </tr>
+	  <tr>
+	  	<td><i>{{ statement.formatted_timestamp }}</i></td>
+	  </tr>
+	  <tr>     
+                <td style="font-family:verdana">{{ statement.message }}</td>
+	  </tr>
+	  <!--tr>
+	  <td>
+	  <p>
+		<b>{{ statement.handle }}</b><br/>
+		<i>{{ statement.formatted_timestamp }}</i></br>
+		{{ statement.message }}
+	 
+	  </p>
+	  </td>
+	  </tr--> 
+        {% endfor %}
+      </tbody>
+      </section>
+      <tfoot>
+      <tr>
+	<td><label for="handle">Your name:</label></td>
+	<td><input id="handle" type="text" placeholder="handle"></td>
+	</tr>
+	<tr>
+        <td>Say something:</td>
+        <td colspan=2>
+	   <input id="message" type="text" placeholder="message">
+	   <button type="submit" id="go">Say it</button>
+        </td>
+	</tr>
+      </tfoot>
+    </table>
+  </form>
+{% endblock content %}
+
+{% block afterbody %}
+  <script type="text/javascript" src='{% static "jquery-1.12.1.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "reconnecting-websocket.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "forum.js" %}'></script>
+{% endblock afterbody %}

@@ -1,0 +1,9 @@
+from django.conf.urls import include, url
+#from . import chat.views
+import chat.views
+
+urlpatterns = [
+    url(r'^$',  chat.views.about, name='about'),
+    url(r'^new/$', chat.views.new_discussion, name='new_discussion'),
+    url(r'^(?P<label>[\w-]{,50})/$', chat.views.discussion_forum, name='discussion_forum'),
+]

@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Experiment</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       <div class="page-header">
+	 <h1><a href="/">TASK EXPERIMENT</a></h1>         
+ 	</div>	
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+	
+            
+		<h1>    You shall wait for 2 minutes. Then you'll be guided to the mystery page</h1>
+   		<h2> To go back: </h2>
+   		<a href="{% url 'home_page' %}">Go to the Home Page</a>&nbsp;| &nbsp;
+	</br>
+	<div id="wait_room">
+	{% block way %}{% endblock %}
+	</div>
+            </div>
+        </div>
+    </div>
+    
+  <script type="text/javascript" src='{% static "jquery-1.12.1.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "reconnecting-websocket.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "wait.js" %}'></script>
+    
+    </body>
+</html>
+
+
+
+

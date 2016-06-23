@@ -1,0 +1,15 @@
+{% extends 'experiment/base_exp.html' %}
+
+{% block content %}
+
+    <form class="form-signin" method="post" action="{% url 'nickname' %}">
+        {% csrf_token %}
+
+        <h2 class="form-signin-heading">Choose a nickname</h2>
+        <label for="inputUsername" class="sr-only">Nickname</label>
+        <input type="text" name="nickname" id="inputUsername" class="form-control has-error" placeholder="Nickname"
+               required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+{% endblock %}
+

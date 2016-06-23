@@ -1,0 +1,50 @@
+{% load humanize %}
+{% load mptt_tags %}
+
+{% recursetree comments %}
+
+
+
+  <div class="statement" id={{ statement.id }}>
+  <span class="msgtext">{{ node.message }}</span>
+  <span class="handle">-&nbsp;{{ node.handle }}</span> 
+  <span class="timestamp">{{ node.formatted_timestamp }}</span> 
+  <form id="chat{{node.id}}" class="replyforms" data-handle="ylareply" data-msgtype="reply" data-msg_id="{{node.id}}">
+
+        <input id="message{{node.id}}" type="text" placeholder="reply here">
+	   <button type="submit" id="go">Save</button>
+
+  </form>
+        {% if not node.is_leaf_node %}
+            {{ children }}
+        {% endif %}
+  </div>
+
+
+{% endrecursetree %}
+
+
+<!--{% load mptt_tags %}
+
+{% recursetree comments %}
+
+
+
+  <div class="statement" id={{ statement.id }}>
+  <span class="msgtext">{{ node.message }}</span>
+  <span class="handle">-&nbsp;{{ node.handle }}</span> 
+  <span class="timestamp">{{ node.formatted_timestamp }}</span> 
+  <form id="chat{{node.id}}" class="replyforms" data-handle="ylareply" data-msgtype="reply" data-msg_id="{{node.id}}">
+
+        <input id="message{{node.id}}" type="text" placeholder="reply here">
+	   <button type="submit" id="go">Save</button>
+
+  </form>
+        {% if not node.is_leaf_node %}
+            {{ children }}
+        {% endif %}
+  </div>
+
+
+{% endrecursetree %}
+-->

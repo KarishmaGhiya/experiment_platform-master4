@@ -1,0 +1,146 @@
+[
+  {
+    "model": "experiment.problem",
+    "pk": 1,
+    "fields": {
+      "prob_num": 1,
+      "instructions": "Instructions for Problem 1"
+    }
+  },
+  {
+    "model": "experiment.problem",
+    "pk": 2,
+    "fields": {
+      "prob_num": 2,
+      "instructions": "Instructions for Problem 2"
+    }
+  },
+  {
+    "model": "experiment.problem",
+    "pk": 3,
+    "fields": {
+      "prob_num": 3,
+      "instructions": "Instructions for Problem 3"
+    }
+  },
+  {
+    "model": "experiment.problemhint",
+    "pk": 1,
+    "fields": {
+      "problem_id": 1,
+      "hint_num": 1,
+      "hint_type": "main",
+      "hint_text": "Problem 1 Hint 1"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 2,
+    "fields": {
+      "problem_id": 1,
+      "hint_num": 2,
+      "hint_type": "main",
+      "hint_text": "Problem 1 Hint 2"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 3,
+    "fields": {
+      "problem_id": 1,
+      "hint_num": 3,
+      "hint_type": "main",
+      "hint_text": "Problem 1 Hint 3"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 4,
+    "fields": {
+      "problem_id": 1,
+      "hint_num": 4,
+      "hint_type": "main",
+      "hint_text": "Problem 1 Hint 4"
+    }
+  }, 
+   {
+    "model": "experiment.problemhint",
+    "pk": 5,
+    "fields": {
+      "problem_id": 2,
+      "hint_num": 1,
+      "hint_type": "main",
+      "hint_text": "Problem 2 Hint 1"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 6,
+    "fields": {
+      "problem_id": 2,
+      "hint_num": 2,
+      "hint_type": "main",
+      "hint_text": "Problem 2 Hint 2"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 7,
+    "fields": {
+      "problem_id": 2,
+      "hint_num": 3,
+      "hint_type": "main",
+      "hint_text": "Problem 2 Hint 3"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 8,
+    "fields": {
+      "problem_id": 2,
+      "hint_num": 4,
+      "hint_type": "main",
+      "hint_text": "Problem 2 Hint 4"
+    }
+  }, 
+   {
+    "model": "experiment.problemhint",
+    "pk": 9,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 1,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 1"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 10,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 2,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 2"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 11,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 3,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 3"
+    }
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 12,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 4,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 4"
+    }
+  } 
+]

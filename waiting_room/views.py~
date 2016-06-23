@@ -1,0 +1,11 @@
+from django.shortcuts import render
+
+# Create your views here.
+def wait_home(request):
+    return render(request,'waiting_room/wait_home.html')
+
+def forumapp(request):
+    return render(request,'forum/about.html')
+
+def chatapp(request):
+    return render(request,'chat/about.html')

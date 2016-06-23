@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Here are a few instructions for you while you wait for others</h3>
+{% endblock %}
+
+
