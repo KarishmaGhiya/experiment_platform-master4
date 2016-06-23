@@ -82,8 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'crowdps',
-        'USER': 'crowduser',
-        'PASSWORD':'ctails9',
+        #'USER': 'crowduser',
+        #'PASSWORD':'ctails9',
+	'USER': 'karishma',
+        'PASSWORD':'8CLknd43aF',
     }
 }
 
