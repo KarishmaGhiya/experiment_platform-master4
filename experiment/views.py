@@ -42,9 +42,9 @@ def home_page(request):
                 cm = Crowd_Members.objects.get(user=myuser)
                 url = ''
                 if cm.crowd.communication == '_forum':
-                    url ='http://127.0.0.1:8000/forum/room'+str(cm.crowd.id)
+                    url ='http://crowdps.umd.edu/forum/room'+str(cm.crowd.id)
                 elif cm.crowd.communication == '_chat':
-                    url ='http://127.0.0.1:8000/chat/room'+str(cm.crowd.id)
+                    url ='http://crowdps.umd.edu/chat/room'+str(cm.crowd.id)
                 else:
                     return render(request,'experiment/error.html',{"message":"on task bad crowd.communication"}) 
 

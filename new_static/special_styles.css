@@ -1,0 +1,22 @@
+.msgtext{
+vertical-align:middle;
+
+}
+
+.handle{
+
+vertical-align:middle;
+font-style:italic;
+
+}
+
+.timestamp{
+vertical-align:middle;
+font-style:italic;
+
+}
+
+.vote comment-votes{
+float:left;
+
+}

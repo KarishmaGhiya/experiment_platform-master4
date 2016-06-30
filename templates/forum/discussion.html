@@ -8,7 +8,7 @@
   {% for hint in hints %}
     <p class="quiet">{{ hint }}</p>
   {% endfor %}
-
+<div id = "forum-frame" class="left" style="float:left;height:600px;width:600px;border:1px solid #ccc;padding-left:20px; padding-right:20px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
 <form id="chatmain" class="chatforms" data-msgtype="main">
     <div class="form-group comment-group"> 
     <label for="commentContent" class="col-lg-2 control-label">New comment</label>
@@ -35,10 +35,10 @@
 
 
 
-  <div class="statement" id={{ node.id }} data-msgtype="reply" data-msg_id="{{node.id}}">
+  <div class="statement" id={{ node.id }} data-msgtype="reply" data-msg_id="{{node.id}}" >
           <div class="media-left">
             <div class="vote comment-votes"
-                 data-msg_id="{{ node.id }}">
+                 data-msg_id="{{ node.id }}" style="float:left;">
                     <div><i class="fa fa-chevron-up"
                             name="upvote"></i>
                     </div>
@@ -46,12 +46,14 @@
                     <div><i class="fa fa-chevron-down"
                             name="downvote"></i></div>
             </div>
+<span class="msgtext" style="vertical-align:middle; ">{{ node.message }}</span></br>
+  <span class="handle" style="vertical-align:middle; font-style:italic;">-&nbsp;{{ node.handle }} -&nbsp;</span>
+  <span class="timestamp" style="vertical-align:middle; font-style:italic;">{{ node.formatted_timestamp }}</span>	
+
         </div>
   
   
-  <span class="msgtext">{{ node.message }}</span>
-  <span class="handle">-&nbsp;{{ node.handle }}</span> 
-  <span class="timestamp">{{ node.formatted_timestamp }}</span> 
+ 
     <div class="reply-container">
         <ul class="buttons">
         <li><a href="javascript:void(0)" name="replyButton" class="replylink">reply</a></li>
@@ -67,6 +69,10 @@
 {% endrecursetree %}
 
  </div>
+</div>
+<div class = "right" style="float:right;">
+<iframe name="doc" id="doc" height="1000" width="850" src="https://docs.google.com/spreadsheets/d/1XD6NpY8NZRC1ta1GmUUfxK9ZQeMJJbrL4C57iHdtT9I/edit?usp=sharing"></iframe>
+</div>
 {% endblock content %}
 
 {% block afterbody %}

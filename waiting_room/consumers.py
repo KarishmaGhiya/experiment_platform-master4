@@ -73,9 +73,9 @@ def wait_connect(message):
 		#fetch the object for which crowd & look up the object if it has chat/forum
         t = {}		
         if crowd.communication == '_forum':
-            t['url']='http://127.0.0.1:8000/forum/room'
+            t['url']='http://crowdps.umd.edu/forum/room'
         elif crowd.communication == '_chat':
-            t['url']='http://127.0.0.1:8000/chat/room'
+            t['url']='http://crowdps.umd.edu/chat/room'
         t['url'] += str(which_crowd)
         Group('wait-'+title, channel_layer=message.channel_layer).send({'text': json.dumps(t)})
 

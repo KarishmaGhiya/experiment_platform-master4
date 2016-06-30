@@ -1,0 +1,27 @@
+.vote comment-votes{
+display: inline-block;
+float:left;
+}
+
+.msgtext{
+display:inline-block;
+vertical-align:middle;
+
+}
+
+.handle{
+display: inline-block;
+vertical-align:middle;
+font-style:italic;
+
+}
+
+.timestamp{
+display: inline-block;
+vertical-align:middle;
+font-style:italic;
+
+}
+
+
+

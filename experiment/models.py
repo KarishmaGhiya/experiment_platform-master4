@@ -41,7 +41,7 @@ class ProblemHintManager(models.Manager):
 
     def random(self):
         count = self.aggregate(count=Count('id'))['count']
-        random_ints = sample(range(0,count),2)
+        random_ints = sample(range(0,count),6)
         random_sample = [obs for (i,obs) in enumerate(self.all()) if i in random_ints] 
         return random_sample
 

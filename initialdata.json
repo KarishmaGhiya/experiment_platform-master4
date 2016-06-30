@@ -142,5 +142,65 @@
       "hint_type": "main",
       "hint_text": "Problem 3 Hint 4"
     }
-  } 
+  }, 
+  {
+    "model": "experiment.problemhint",
+    "pk": 13,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 5,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 5"
+    }
+  },
+  {
+    "model": "experiment.problemhint",
+    "pk": 14,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 6,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 6"
+    }
+  },
+  {
+    "model": "experiment.problemhint",
+    "pk": 15,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 7,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 7"
+    }
+  },
+  {
+    "model": "experiment.problemhint",
+    "pk": 16,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 8,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 8"
+    }
+   },
+   {
+    "model": "experiment.problemhint",
+    "pk": 17,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 9,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 9"
+    }
+  },
+  {
+    "model": "experiment.problemhint",
+    "pk": 18,
+    "fields": {
+      "problem_id": 3,
+      "hint_num": 10,
+      "hint_type": "main",
+      "hint_text": "Problem 3 Hint 10"
+    }
+  }
 ]

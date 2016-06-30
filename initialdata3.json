@@ -1,0 +1,943 @@
+[
+  {
+    "fields": {
+      "instructions": "<p>Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:</p><p>To whom is Chris married, what is his job, and where does he live?</p>",
+      "prob_num": 1
+    },
+    "pk": 1,
+    "model": "experiment.problem"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Daniel is married to Gloria.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 0
+    },
+    "pk": 1,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Ben lives in Austin, TX.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 1
+    },
+    "pk": 2,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Edward is a Driving instructor.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 2
+    },
+    "pk": 3,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Lawyer lives in Jennifer.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 3
+    },
+    "pk": 4,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Ida lives with a Actor.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 4
+    },
+    "pk": 5,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Holly lives in Columbus, OH.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 5
+    },
+    "pk": 6,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Edward is not married to Florence.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 6
+    },
+    "pk": 7,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Florence does not live in Milwaukee, WI.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 7
+    },
+    "pk": 8,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Ben is not married to Florence or to Jennifer.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 8
+    },
+    "pk": 9,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Arthur is either a Banker or a Lawyer.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 9
+    },
+    "pk": 10,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Neither Arthur nor Daniel lives in Indianapolis, IN.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 10
+    },
+    "pk": 11,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Gloria does not live in San Francisco, CA.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 11
+    },
+    "pk": 12,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Daniel is not a Manager.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 12
+    },
+    "pk": 13,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Manager does not live in Indianapolis, IN or in Milwaukee, WI.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 13
+    },
+    "pk": 14,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Chris is not a Actor or Banker.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 14
+    },
+    "pk": 15,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Jennifer does not live in either Austin, TX or Milwaukee, WI.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 15
+    },
+    "pk": 16,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Holly is not married to a Lawyer nor to a Driving instructor.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 16
+    },
+    "pk": 17,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Driving instructor does not live in Austin, TX or Columbus, OH.</p>",
+      "problem_id": 1,
+      "hint_type": "main",
+      "hint_num": 17
+    },
+    "pk": 18,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "instructions": "<p>Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:</p><p>To whom is Cliff married, what is his job, and where does he live?</p>",
+      "prob_num": 2
+    },
+    "pk": 2,
+    "model": "experiment.problem"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Doug is married to Gail.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 0
+    },
+    "pk": 19,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bruce lives in Baltimore, MD.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 1
+    },
+    "pk": 20,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Eric is a Director.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 2
+    },
+    "pk": 21,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Landscaper lives in Julie.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 3
+    },
+    "pk": 22,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Iris lives with a Accountant.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 4
+    },
+    "pk": 23,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Helen lives in Dallas, TX.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 5
+    },
+    "pk": 24,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Eric is not married to Felicia.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 6
+    },
+    "pk": 25,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Felicia does not live in New York City, NY.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 7
+    },
+    "pk": 26,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bruce is not married to Felicia or to Julie.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 8
+    },
+    "pk": 27,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Aaron is either a Bartender or a Landscaper.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 9
+    },
+    "pk": 28,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Neither Aaron nor Doug lives in Las Vegas, NV.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 10
+    },
+    "pk": 29,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Gail does not live in San Diego, CA.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 11
+    },
+    "pk": 30,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Doug is not a Mason.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 12
+    },
+    "pk": 31,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Mason does not live in Las Vegas, NV or in New York City, NY.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 13
+    },
+    "pk": 32,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Cliff is not a Accountant or Bartender.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 14
+    },
+    "pk": 33,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Julie does not live in either Baltimore, MD or New York City, NY.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 15
+    },
+    "pk": 34,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Helen is not married to a Landscaper nor to a Director.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 16
+    },
+    "pk": 35,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Director does not live in Baltimore, MD or Dallas, TX.</p>",
+      "problem_id": 2,
+      "hint_type": "main",
+      "hint_num": 17
+    },
+    "pk": 36,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "instructions": "<p>Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:</p><p>To whom is Carl married, what is his job, and where does he live?</p>",
+      "prob_num": 3
+    },
+    "pk": 3,
+    "model": "experiment.problem"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Donald is married to Gwen.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 0
+    },
+    "pk": 37,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Brian lives in Boston, MA.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 1
+    },
+    "pk": 38,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Ed is a Designer.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 2
+    },
+    "pk": 39,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Librarian lives in Jessica.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 3
+    },
+    "pk": 40,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Isabelle lives with a Analyst.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 4
+    },
+    "pk": 41,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Heather lives in Denver, CO.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 5
+    },
+    "pk": 42,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Ed is not married to Fannie.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 6
+    },
+    "pk": 43,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Fannie does not live in Philadelphia, PA.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 7
+    },
+    "pk": 44,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Brian is not married to Fannie or to Jessica.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 8
+    },
+    "pk": 45,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Adam is either a Biologist or a Librarian.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 9
+    },
+    "pk": 46,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Neither Adam nor Donald lives in Los Angeles, CA.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 10
+    },
+    "pk": 47,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Gwen does not live in San Antonio, TX.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 11
+    },
+    "pk": 48,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Donald is not a Mechanic.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 12
+    },
+    "pk": 49,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Mechanic does not live in Los Angeles, CA or in Philadelphia, PA.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 13
+    },
+    "pk": 50,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Carl is not a Analyst or Biologist.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 14
+    },
+    "pk": 51,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Jessica does not live in either Boston, MA or Philadelphia, PA.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 15
+    },
+    "pk": 52,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Heather is not married to a Librarian nor to a Designer.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 16
+    },
+    "pk": 53,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Designer does not live in Boston, MA or Denver, CO.</p>",
+      "problem_id": 3,
+      "hint_type": "main",
+      "hint_num": 17
+    },
+    "pk": 54,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "instructions": "<p>Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:</p><p>To whom is Craig married, what is his job, and where does he live?</p>",
+      "prob_num": 4
+    },
+    "pk": 4,
+    "model": "experiment.problem"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>David is married to Gina.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 0
+    },
+    "pk": 55,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bill lives in Charlotte, NC.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 1
+    },
+    "pk": 56,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Earl is a Dentist.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 2
+    },
+    "pk": 57,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Lifeguard lives in Janet.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 3
+    },
+    "pk": 58,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Irene lives with a Architect.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 4
+    },
+    "pk": 59,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Hannah lives in Detroit, MI.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 5
+    },
+    "pk": 60,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Earl is not married to Flora.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 6
+    },
+    "pk": 61,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Flora does not live in Phoenix, AZ.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 7
+    },
+    "pk": 62,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bill is not married to Flora or to Janet.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 8
+    },
+    "pk": 63,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Alexander is either a Bookkeeper or a Lifeguard.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 9
+    },
+    "pk": 64,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Neither Alexander nor David lives in Memphis, TN.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 10
+    },
+    "pk": 65,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Gina does not live in Seattle, WA.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 11
+    },
+    "pk": 66,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>David is not a Meteorologist.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 12
+    },
+    "pk": 67,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Meteorologist does not live in Memphis, TN or in Phoenix, AZ.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 13
+    },
+    "pk": 68,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Craig is not a Architect or Bookkeeper.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 14
+    },
+    "pk": 69,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Janet does not live in either Charlotte, NC or Phoenix, AZ.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 15
+    },
+    "pk": 70,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Hannah is not married to a Lifeguard nor to a Dentist.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 16
+    },
+    "pk": 71,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Dentist does not live in Charlotte, NC or Detroit, MI.</p>",
+      "problem_id": 4,
+      "hint_type": "main",
+      "hint_num": 17
+    },
+    "pk": 72,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "instructions": "<p>Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:</p><p>To whom is Charles married, what is his job, and where does he live?</p>",
+      "prob_num": 5
+    },
+    "pk": 5,
+    "model": "experiment.problem"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Dennis is married to Grace.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 0
+    },
+    "pk": 73,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bob lives in Chicago, IL.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 1
+    },
+    "pk": 74,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Eugene is a Dancer.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 2
+    },
+    "pk": 75,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Locksmith lives in Joyce.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 3
+    },
+    "pk": 76,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Irma lives with a Auditor.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 4
+    },
+    "pk": 77,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Heidi lives in Houston, TX.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 5
+    },
+    "pk": 78,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Eugene is not married to Francisca.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 6
+    },
+    "pk": 79,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Francisca does not live in Portland, OR.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 7
+    },
+    "pk": 80,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Bob is not married to Francisca or to Joyce.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 8
+    },
+    "pk": 81,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Andy is either a Bodyguard or a Locksmith.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 9
+    },
+    "pk": 82,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Neither Andy nor Dennis lives in Miami, FL.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 10
+    },
+    "pk": 83,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Grace does not live in Washington, DC.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 11
+    },
+    "pk": 84,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Dennis is not a Microbiologist.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 12
+    },
+    "pk": 85,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Microbiologist does not live in Miami, FL or in Portland, OR.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 13
+    },
+    "pk": 86,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Charles is not a Auditor or Bodyguard.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 14
+    },
+    "pk": 87,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Joyce does not live in either Chicago, IL or Portland, OR.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 15
+    },
+    "pk": 88,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>Heidi is not married to a Locksmith nor to a Dancer.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 16
+    },
+    "pk": 89,
+    "model": "experiment.problemhint"
+  },
+  {
+    "fields": {
+      "hint_text": "<p>The Dancer does not live in Chicago, IL or Houston, TX.</p>",
+      "problem_id": 5,
+      "hint_type": "main",
+      "hint_num": 17
+    },
+    "pk": 90,
+    "model": "experiment.problemhint"
+  }
+]
+ 

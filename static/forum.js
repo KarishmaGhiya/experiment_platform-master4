@@ -27,21 +27,25 @@ $(function() {
  		ele.attr("data-msgtype","reply");
  		ele.attr("data-msg_id",data.id);
 	alert(message.data);
-	    ele.append('<div class="media-left"><div class="vote comment-votes" data-msg_id='+data.id+'> <div><i class="fa fa-chevron-up" name="upvote"></i></div><div class="score">0</div><div><i class="fa fa-chevron-down" name="downvote"></i></div> </div> </div>')
+	var media_left= $("<div>",{class:"media-left"})
+
+	    media_left.append('<div class="vote comment-votes" style="float:left;" data-msg_id='+data.id+'> <div><i class="fa fa-chevron-up" name="upvote"></i></div><div class="score">0</div><div><i class="fa fa-chevron-down" name="downvote"></i></div> </div>')
 	
 	//ele.append($"<th rowspan="3"></th>")
 	//ele.append($'<tr>')
-        ele.append(
-            $("<span>",{class: "msgtext",text: data.message})
+        media_left.append(
+            $("<span>",{class: "msgtext",text: data.message, style:"vertical-align:middle;"})
         )
-        ele.append(
-            $("<span>",{class: "handle",text: " - ".concat(data.handle)})
+	media_left.append('</br>')
+        media_left.append(
+            $("<span>",{class: "handle",text: " - ".concat(data.handle).concat("-"),style:"vertical-align:middle;"})
             
         )
 	//ele.append($"</tr>")
-        ele.append(
-            $("<span>",{class: "timestamp",text: data.timestamp})
+        media_left.append(
+            $("<span>",{class: "timestamp",text: data.timestamp,style:"vertical-align:middle;"})
         )
+	ele.append(media_left)
 
     	var replyHtml = '<div class="reply-container"><ul class="buttons"><li><a href="javascript:void(0)" name="replyButton" class="replylink">reply</a></li></ul></div>'
 		ele.append(replyHtml);

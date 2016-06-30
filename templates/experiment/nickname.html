@@ -1,15 +1,20 @@
 {% extends 'experiment/base_exp.html' %}
 
 {% block content %}
+<h2>In this task you will be working with other people. Please choose a nickname that
 
+represents you and that you feel comfortable sharing with other people during this
+
+task. </h2>
     <form class="form-signin" method="post" action="{% url 'nickname' %}">
         {% csrf_token %}
+	
 
-        <h2 class="form-signin-heading">Choose a nickname</h2>
+        <h1 class="form-signin-heading">Choose a nickname</h1>
         <label for="inputUsername" class="sr-only">Nickname</label>
-        <input type="text" name="nickname" id="inputUsername" class="form-control has-error" placeholder="Nickname"
+        <input type="text" name="nickname" maxlength="20" id="inputUsername" class="form-control has-error" placeholder="Nickname"
                required autofocus>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        <button class="btn btn-lg btn-primary btn-block" style="width:10em; height : 2em;text-align:center;"  type="submit">Submit</button>
     </form>
 {% endblock %}
 

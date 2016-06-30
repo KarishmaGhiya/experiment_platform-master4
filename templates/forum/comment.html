@@ -6,9 +6,9 @@
 
 
   <div class="statement" id={{ statement.id }}>
-  <span class="msgtext">{{ node.message }}</span>
-  <span class="handle">-&nbsp;{{ node.handle }}</span> 
-  <span class="timestamp">{{ node.formatted_timestamp }}</span> 
+  <span class="msgtext" style="vertical-align:middle;" >{{ node.message }}</span><br/>
+  <span class="handle" style="vertical-align:middle; font-style:italic;" >-&nbsp;{{ node.handle }} -&nbsp;</span> 
+  <span class="timestamp" style="vertical-align:middle; font-style:italic;" >{{ node.formatted_timestamp }}</span> 
   <form id="chat{{node.id}}" class="replyforms" data-handle="ylareply" data-msgtype="reply" data-msg_id="{{node.id}}">
 
         <input id="message{{node.id}}" type="text" placeholder="reply here">
