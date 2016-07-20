@@ -4,7 +4,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect
 import haikunator
 from .models import Discussion, Statement
-from experiment.models import Crowd_Members, Crowd, Problem, ProblemHint, UserHints
+from experiment.models import Crowd_Members, Crowd, Problem, ProblemHint, UserHints, Documents
 
 def about(request):
     return render(request, "forum/about.html")
@@ -46,7 +46,8 @@ def discussion_forum(request, label):
         # create or get userhint
         uhints = UserHints.objects.filter(user=request.user)
         if len(uhints)==0:
-            hints = ProblemHint.objects.random()
+	    
+            hints = ProblemHint.objects.random(cm.cohort_id,cm.crowd.Problem.id)#cohort & problemtask
             uhints = []
             for h in hints:
                 uh = UserHints.objects.create(user=request.user,crowd=cm.crowd,problem=cm.crowd.Problem,hint=h)
@@ -55,12 +56,16 @@ def discussion_forum(request, label):
         # We want to show the last 50 messages, ordered most-recent-last
         #statements = reversed(discussion.statements.order_by('-timestamp'))
         statements = Statement.objects.filter(discussion=discussion)
-
+	try:
+            cm_document = Documents.objects.get(id=cm.crowd.doc.id)
+        except Documents.DoesNotExist:
+            return render(request,'experiment/error.html',{"message":"no document"}) 
         return render(request, "forum/discussion.html", {
         'discussion': discussion,
         'statements': statements,
         'problem':cm.crowd.Problem.instructions,
-        'hints':uhints
+        'hints':uhints,
+	'url':cm_document.document_url
         })
     else:
         return redirect('experiment.views.home_page')

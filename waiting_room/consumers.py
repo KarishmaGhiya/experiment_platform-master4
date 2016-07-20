@@ -50,7 +50,7 @@ def wait_connect(message):
     userlist = WaitUser.objects.filter(wait_room=wait_room,is_active=1)
     log.debug('wait connect numusers=%s', 
         len(userlist))
-    if len(userlist)>=1:
+    if len(userlist)>=3:
            
         #check crowd id of empty crowd
         which_crowd = Crowd.objects.Crowd_which_assign()
@@ -63,6 +63,7 @@ def wait_connect(message):
             crowd.members.create(user=u.user,crowd=crowd,cohort_id=cohortid)
             eu = ExpUser.objects.get(user=u.user)
             eu.expstage = "task"
+	    #eu.secret_code = randint(1,100000)
             eu.save()
             u.is_active = 0
             u.save()		
@@ -77,50 +78,44 @@ def wait_connect(message):
         elif crowd.communication == '_chat':
             t['url']='http://crowdps.umd.edu/chat/room'
         t['url'] += str(which_crowd)
+	log.debug(json.dumps(t))
         Group('wait-'+title, channel_layer=message.channel_layer).send({'text': json.dumps(t)})
+    log.debug('after if & group')
 
 
-
+@channel_session_user
 @channel_session
 def wait_receive(message):
-    # Look up the wait room from the channel session, bailing if it doesn't exist
+
+
+    mymessage = message.content['text']
     try:
-        title = message.channel_session['wait_room']
-        wait_room = WaitRoom.objects.get(title=title)
-    except KeyError:
-        log.debug('no wait-room in channel_session')
-        return
-    except WaitRoom.DoesNotExist:
-        log.debug('recieved message, buy wait-room does not exist label=%s', title)
-        return
+        myuser = message.user
+        u = ExpUser.objects.get(user=myuser)
+        #log.debug("gets user from expuser %s",u.expstage)
+        if u.expstage=="task":
+            #log.debug("right before crowd members")
+            cm = Crowd_Members.objects.get(user=myuser)
+            #log.debug("right after crowd members")
+            #log.debug("gets com %s",cm.crowd.communication)
+            if cm.crowd.communication == '_forum':
+                mymessage ='http://crowdps.umd.edu/forum/room'+str(cm.crowd.id)
+            elif cm.crowd.communication == '_chat':
+                mymessage ='http://crowdps.umd.edu/chat/room'+str(cm.crowd.id)
+            #log.debug("gets url %s",mymessage)
+            t = {'url':mymessage,
+                'users':[myuser.username]
+                }
+            message.reply_channel.send({
+                "text":json.dumps(t),
+            })
+        else:
+            pass
+            #mymessage  = "continue to wait"
 
-    pass
-#
-#    try:
-#        data = json.loads(message['text'])
-#    except ValueError:
-#        log.debug("ws message isn't json text=%s", text)
-#        return
-#    cnt = 0 
-#    for message['client'] in redis_conn.smembers("waitroom"):
-#	#log.debug("all message clients are= %s:%s",message['client'][0],message['client'][1])
-#	cnt = cnt + 1
-#    log.debug("No of clients: %d",cnt)
-#    log.debug(redis_conn.smembers("waitroom"))
-    #cnt = 0
-    #for reply_channel in redis_conn.smembers("waitroom"):
-	#log.debug("various channels connected are=%s",message.reply_channel.name)
-	#cnt= cnt + 1   
-    #log.debug("total no of channels: %d",cnt)
-        #Channel(channel).send(content=content, binary=False)
+    except:
+        log.debug("problem getting user %s",myuser)
 
-#    if data:
-#	log.debug('chat message room=%s message=%s', 
-#            wait_room.title, data['message'])
-#	log.debug(json.dumps(data))
-#        m = wait_room.messages.create(**data)
-#        # See above for the note about Group
-#        Group('wait-'+title, channel_layer=message.channel_layer).send({'text': json.dumps(m.as_dict())})
 	
 
 @channel_session_user

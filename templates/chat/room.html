@@ -2,12 +2,18 @@
 
 {% block content %}
   {% load staticfiles %}
-  <p class="quiet">
-    Here are the instructions: {{ problem }}
+<h4>PUZZLE:</h4> 
+ <p>
+     {{ problem }}
   </p>
+<ul>
   {% for hint in hints %}
-    <p class="quiet">{{ hint }}</p>
+    <li>{{ hint }}</li>
   {% endfor %}
+</ul>
+<p><b>You will need to work with other Turkers to solve this puzzle.</b> Use the LIVE CHAT below to communicate with other Turkers working on the same problem. <br/>Use this shared <a href="{{url}}" target="_blank"> Google Document</a> to keep track of your answers as you work on the problem (it should open on a new page).</p>
+<p>LIVE CHAT--Submit messages to communicate with other Turkers--</p>
+<div id = "forum-frame" class="left" style="height:600px;width:700px;border:1px solid #ccc;padding-left:20px; padding-right:20px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
   <form id="chatform">
     <table id="chat">
       <tbody>
@@ -29,6 +35,11 @@
       </tfoot>
     </table>
   </form>
+</div>
+<br/>
+<p>Once you hit finish, you will not be able to work on the task anymore. Only press it once you are sure you are done with the task.<br/><b>Remember your answers, you will need them to answer questions on the next page.</b></p>
+<button onclick="location.href='{% url 'survey' %}'">Finish Task</button>
+
 {% endblock content %}
 
 {% block afterbody %}

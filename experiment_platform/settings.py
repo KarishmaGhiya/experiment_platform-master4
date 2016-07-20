@@ -70,7 +70,7 @@ TEMPLATES = (
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'debug': DEBUG,
+            'debug': FALSE,
         },
     },
 )
@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
 	
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'crowdps',
+        'NAME': 'crowdps2',
         #'USER': 'crowduser',
         #'PASSWORD':'ctails9',
 	'USER': 'karishma',

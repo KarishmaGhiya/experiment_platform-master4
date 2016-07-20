@@ -1,24 +1,29 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from waiting_room import views
+import logging
 from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import ExpUser,Crowd_Members, Crowd, Problem
+from .models import ExpUser,Crowd_Members, Crowd, Problem, Consent_form, Questions
 from random import randint
 
+log = logging.getLogger(__name__)
 
 
 def home_page(request):
     if not request.user.is_authenticated():
         workerid = request.GET.get('workerId')
+	hitid = request.GET.get('hitId')
         if not workerid or workerid=='':
             ### no worker id set
             return render(request,'experiment/error.html',{"message":"no worker id"})
+	elif not hitid or hitid=='':
+	    return render(request,'experiment/error.html',{"message":"no hit id"})
         else:
             ### create user
-            user, new = User.objects.get_or_create(username=workerid)
+            user, new = User.objects.get_or_create(username=workerid,first_name=hitid)
             user.set_password("mypass")
             user.save()
             user = authenticate(username=workerid,password="mypass")
@@ -30,6 +35,7 @@ def home_page(request):
             if new:
                 messages.warning(request,"Fill in Nickname")
                 return render(request,'experiment/nickname.html') 
+		#return render(request,'experiment/consent.html')
         return render(request,'experiment/error.html',{"message":"problem in not authenticated"})                
             
     myuser = request.user
@@ -64,13 +70,16 @@ def home_page(request):
     return render(request,'experiment/error.html',{"message":"problem in authenticated"}) 
         
 def nickname(request):
-
+    
     if request.user.is_authenticated():
         if request.method == "POST":
-            nickname = request.POST.get('nickname')
+            nickname = request.POST.get('nickname')	    
             myuser = request.user
-            userexp = ExpUser.objects.create(user=myuser,nickname=nickname,expstage="wait_room")
-            return render(request,'waiting_room/wait_home.html')
+	    s = randint(1,100000)	    
+            userexp = ExpUser.objects.create(user=myuser,nickname=nickname,expstage="wait_room",secret_code = s)	    
+	    consent_user = Consent_form.objects.create(user=myuser,agree='signed')
+
+            return redirect('experiment.views.wait_room')
 
         return render(request,'experiment/nickname.html')
     else:
@@ -78,16 +87,66 @@ def nickname(request):
 
 def finish(request):
     if request.user.is_authenticated(): 
-        return render(request,'experiment/finish.html')
+	u = ExpUser.objects.get(user=request.user)
+	s = u.secret_code
+        return render(request,'experiment/finish.html',{"secret_code":s})
     else:
         return redirect('experiment.views.home_page')
-    
+
+
+'''def consent(request):
+	workerid = request.GET.get('workerId')
+        if not workerid or workerid=='':
+            ### no worker id set
+            return render(request,'experiment/error.html',{"message":"no worker id"})
+	return render(request,'experiment/consent.html')'''
 
 def survey(request):
     if request.user.is_authenticated(): 
         u = ExpUser.objects.get(user=request.user)
         u.stage = "survey"
         u.save()
+	if request.method == "POST":
+		GrpSol = request.POST.get('group_soln')
+		InvSolWife = request.POST.get('inv_sol_wife')
+		InvSolJob = request.POST.get('inv_sol_job')
+		InvSolCity = request.POST.get('inv_sol_city')
+		DegConf = int(request.POST.get('deg_conf'))
+		Diff = request.POST.get('difference')
+		GrpExp1_1 = int(request.POST.get('deg_agree1'))
+		GrpExp1_2 = int(request.POST.get('deg_agree2'))
+		GrpExp1_3 = int(request.POST.get('deg_agree3'))
+		GrpExp1_4 = int(request.POST.get('deg_agree4'))
+		GrpExp1_5 = int(request.POST.get('deg_agree5'))
+		GrpExp1_6 = int(request.POST.get('deg_agree6'))
+		GrpExp1_7 = int(request.POST.get('deg_agree7'))
+		GrpExp2 = request.POST.get('group_exp2')
+		Sex = request.POST.get('gender')
+		Age = int(request.POST.get('age'))
+		Edu = request.POST.get('edu')
+		Empl_var = request.POST.getlist('empl[]')
+		i = 0
+		Empl_schoolFull = 'no'
+		Empl_schoolPart = 'no'
+		Empl_part = 'no'
+		Empl_full = 'no'
+		for i in range(0,len(Empl_var)):
+			if Empl_var[i] == "school_full":
+				Empl_schoolFull = 'yes'
+			if Empl_var[i] == "school_part":
+				Empl_schoolPart = 'yes'
+			if Empl_var[i] == "part_time":
+				Empl_part = 'yes'
+			if Empl_var[i] == "full_time":
+				Empl_full = 'yes' 
+		
+		Country = request.POST.get('country')
+		HITs = request.POST.get('HITs')
+		myuser = request.user
+		question_user = Questions.objects.create(worker=myuser,GrpSol=GrpSol, InvSolWife=InvSolWife, InvSolJob=InvSolJob, InvSolCity=InvSolCity, DegConf=DegConf, Diff=Diff,GrpExp1_1=GrpExp1_1,GrpExp1_2=GrpExp1_2, GrpExp1_3=GrpExp1_3,GrpExp1_4=GrpExp1_4,GrpExp1_5=GrpExp1_5,GrpExp1_6=GrpExp1_6,GrpExp1_7=GrpExp1_7,GrpExp2=GrpExp2, Sex=Sex,Age=Age, Edu=Edu,Empl_schoolFull=Empl_schoolFull,Empl_schoolPart =Empl_schoolPart,Empl_part =Empl_part,Empl_full=Empl_full,Country=Country,HITs=HITs )
+		return redirect('experiment.views.finish')	
+
+
         return render(request,'experiment/survey.html')
     else:
         return redirect('experiment.views.home_page')

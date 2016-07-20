@@ -54,7 +54,7 @@ class Statement(MttpContentTypeAware):
 
     @property
     def formatted_timestamp(self):
-        return self.timestamp.strftime('%b %-d %-I:%M %p')
+        return self.timestamp.strftime('%b %-d %-I:%M %p UTC')
     
     def as_dict(self):
         return {'handle': self.handle, 'message': self.message, 'timestamp': self.formatted_timestamp, 'id': self.id,'isreply': self.isreply, 'parentid': self.parentid, 'score':self.score}

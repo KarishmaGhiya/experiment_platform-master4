@@ -1,0 +1,850 @@
+[
+  {
+    "fields": {
+      "prob_num": 1,
+      "instructions": "Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:To whom is Chris married, what is his job, and where does he live?"
+    },
+    "model": "experiment.problem",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "hint_text": "Daniel, who is not a Manager, is married to Gloria.",
+      "hint_num": 1,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "hint_text": "Gloria does not live in San Francisco.",
+      "hint_num": 2,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "hint_text": "Ben lives in Austin.",
+      "hint_num": 3,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "hint_text": "Ben is not married to Florence or to Jennifer.",
+      "hint_num": 4,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "hint_text": "Edward is a Driving instructor, but is not married to Florence.",
+      "hint_num": 5,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "hint_text": "The Lawyer lives in San Francisco.",
+      "hint_num": 6,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "hint_text": "Ida lives with a Actor.",
+      "hint_num": 7,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "hint_text": "Holly lives in Columbus.",
+      "hint_num": 8,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "hint_text": "Florence does not live in Milwaukee.",
+      "hint_num": 9,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "hint_text": "Arthur is either a Banker or a Lawyer.",
+      "hint_num": 10,
+      "problem_id": 1,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "hint_text": "Neither Arthur nor Daniel lives in Indianapolis.",
+      "hint_num": 11,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "hint_text": "The Manager does not live in Indianapolis or in Milwaukee.",
+      "hint_num": 12,
+      "problem_id": 1,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "prob_num": 2,
+      "instructions": "Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:To whom is Cliff married, what is his job, and where does he live?"
+    },
+    "model": "experiment.problem",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "hint_text": "Doug, who is not a Mason, is married to Gail.",
+      "hint_num": 1,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "hint_text": "Gail does not live in San Diego.",
+      "hint_num": 2,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "hint_text": "Bruce lives in Baltimore.",
+      "hint_num": 3,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "hint_text": "Bruce is not married to Felicia or to Julie.",
+      "hint_num": 4,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "hint_text": "Eric is a Director, but is not married to Felicia.",
+      "hint_num": 5,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "hint_text": "The Landscaper lives in San Diego.",
+      "hint_num": 6,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "hint_text": "Iris lives with a Accountant.",
+      "hint_num": 7,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "hint_text": "Helen lives in Dallas.",
+      "hint_num": 8,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "hint_text": "Felicia does not live in New York City.",
+      "hint_num": 9,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "hint_text": "Aaron is either a Bartender or a Landscaper.",
+      "hint_num": 10,
+      "problem_id": 2,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "hint_text": "Neither Aaron nor Doug lives in Las Vegas.",
+      "hint_num": 11,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "hint_text": "The Mason does not live in Las Vegas or in New York City.",
+      "hint_num": 12,
+      "problem_id": 2,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "prob_num": 3,
+      "instructions": "Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:To whom is Carl married, what is his job, and where does he live?"
+    },
+    "model": "experiment.problem",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "hint_text": "Donald, who is not a Mechanic, is married to Gwen.",
+      "hint_num": 1,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "hint_text": "Gwen does not live in San Antonio.",
+      "hint_num": 2,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "hint_text": "Brian lives in Boston.",
+      "hint_num": 3,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "hint_text": "Brian is not married to Fannie or to Jessica.",
+      "hint_num": 4,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "hint_text": "Ed is a Designer, but is not married to Fannie.",
+      "hint_num": 5,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "hint_text": "The Librarian lives in San Antonio.",
+      "hint_num": 6,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "hint_text": "Isabelle lives with a Analyst.",
+      "hint_num": 7,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "hint_text": "Heather lives in Denver.",
+      "hint_num": 8,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "hint_text": "Fannie does not live in Philadelphia.",
+      "hint_num": 9,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "hint_text": "Adam is either a Biologist or a Librarian.",
+      "hint_num": 10,
+      "problem_id": 3,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "hint_text": "Neither Adam nor Donald lives in Los Angeles.",
+      "hint_num": 11,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "hint_text": "The Mechanic does not live in Los Angeles or in Philadelphia.",
+      "hint_num": 12,
+      "problem_id": 3,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "prob_num": 4,
+      "instructions": "Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:To whom is Craig married, what is his job, and where does he live?"
+    },
+    "model": "experiment.problem",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "hint_text": "David, who is not a Meteorologist, is married to Gina.",
+      "hint_num": 1,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "hint_text": "Gina does not live in Seattle.",
+      "hint_num": 2,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "hint_text": "Bill lives in Charlotte.",
+      "hint_num": 3,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "hint_text": "Bill is not married to Flora or to Janet.",
+      "hint_num": 4,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "hint_text": "Earl is a Dentist, but is not married to Flora.",
+      "hint_num": 5,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "hint_text": "The Lifeguard lives in Seattle.",
+      "hint_num": 6,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "hint_text": "Irene lives with a Architect.",
+      "hint_num": 7,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "hint_text": "Hannah lives in Detroit.",
+      "hint_num": 8,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "hint_text": "Flora does not live in Phoenix.",
+      "hint_num": 9,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "hint_text": "Alexander is either a Bookkeeper or a Lifeguard.",
+      "hint_num": 10,
+      "problem_id": 4,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "hint_text": "Neither Alexander nor David lives in Memphis.",
+      "hint_num": 11,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "hint_text": "The Meteorologist does not live in Memphis or in Phoenix.",
+      "hint_num": 12,
+      "problem_id": 4,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "prob_num": 5,
+      "instructions": "Five men are living good lives. Each man is married, has a job he loves, and lives together with his wife in a vibrant city in the United States. Each man has a different wife, has a different job, and lives in a different city. Using the clues provided answer the question:To whom is Charles married, what is his job, and where does he live?"
+    },
+    "model": "experiment.problem",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "hint_text": "Dennis, who is not a Microbiologist, is married to Grace.",
+      "hint_num": 1,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "hint_text": "Grace does not live in Washington, DC.",
+      "hint_num": 2,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "hint_text": "Bob lives in Chicago.",
+      "hint_num": 3,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "hint_text": "Bob is not married to Francisca or to Joyce.",
+      "hint_num": 4,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 52
+  },
+  {
+    "fields": {
+      "hint_text": "Eugene is a Dancer, but is not married to Francisca.",
+      "hint_num": 5,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 53
+  },
+  {
+    "fields": {
+      "hint_text": "The Locksmith lives in Washington, DC.",
+      "hint_num": 6,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 54
+  },
+  {
+    "fields": {
+      "hint_text": "Irma lives with a Auditor.",
+      "hint_num": 7,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 55
+  },
+  {
+    "fields": {
+      "hint_text": "Heidi lives in Houston.",
+      "hint_num": 8,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 56
+  },
+  {
+    "fields": {
+      "hint_text": "Francisca does not live in Portland.",
+      "hint_num": 9,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 57
+  },
+  {
+    "fields": {
+      "hint_text": "Andy is either a Bodyguard or a Locksmith.",
+      "hint_num": 10,
+      "problem_id": 5,
+      "hint_type": "shared"
+    },
+    "model": "experiment.problemhint",
+    "pk": 58
+  },
+  {
+    "fields": {
+      "hint_text": "Neither Andy nor Dennis lives in Miami.",
+      "hint_num": 11,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 59
+  },
+  {
+    "fields": {
+      "hint_text": "The Microbiologist does not live in Miami or in Portland.",
+      "hint_num": 12,
+      "problem_id": 5,
+      "hint_type": "unique"
+    },
+    "model": "experiment.problemhint",
+    "pk": 60
+  },
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1XGgPk7LaNG_omWmF21FIPmRahARsQNBgMp1iOpQ9-eo",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 1
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1WS4qOu0fhq5c4ogJQllVfR4dsmBmWdVRrVEeIjfckTE",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 2
+  },    
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1TM5Y9bIneXUOvs0sLsYMU92IDQnnUubdP8Ox9hKrOw4",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 3
+  },       
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1jzsrQneJJejAezlqiKqcfcgsIMmm0_xWdJjodIBnT6o",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 4
+  },     
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1_q7j5NTfUtR7xiflur7xSJeMXWCr30ELqJWB1EuYxxw",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 5
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1H7nR_-UhNAq3z8LAvKoXEV8EYuTTb8QaTr_EpErnXmc",       
+      "problem_task_id": 1      
+    },
+    "model": "experiment.documents",
+    "pk": 6
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=16zUM2j8hw06Jnw3u2U6clg5KleTmDrolMNSDJWe0ES8",       
+      "problem_task_id": 2      
+    },
+    "model": "experiment.documents",
+    "pk": 7
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1FtAPJkxlV4n3qwOrhg-srD66CV4d2JV7JI-TvYpRkRY",       
+      "problem_task_id": 2      
+    },
+    "model": "experiment.documents",
+    "pk": 8
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1mJ2T61Wrpb_JN2r0Ze-jf-VEojIo_eVquTXVwurxdQU",       
+      "problem_task_id": 2      
+    },
+    "model": "experiment.documents",
+    "pk": 9
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1j1XmYvhNRHN3bp9F_2Y_GKgc33uVZAXa6zRVFdVh0vg",       
+      "problem_task_id": 2      
+    },
+    "model": "experiment.documents",
+    "pk": 10
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1Sx8X9hx8HTdFelJ1nKMJpTZJH1z0qth8AJRzpEzNbPg",       
+      "problem_task_id": 2      
+    },
+    "model": "experiment.documents",
+    "pk": 11
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1NqQaaJFC0r4bA5dPFR_s5vbJ9Xp0A5_bZLHT0xYugZo",       
+      "problem_task_id": 3      
+    },
+    "model": "experiment.documents",
+    "pk": 12
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1zlc6zQ_QMPIUpJuA-xl7hIojJFikU-wduBqt00V43wI",       
+      "problem_task_id": 3      
+    },
+    "model": "experiment.documents",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1REZ3xJvDnZ-FFXDz_S_i6MsPTsTBRG0ppsLD0l2N6EM",       
+      "problem_task_id": 3      
+    },
+    "model": "experiment.documents",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1U-I6jwTS854vgG9PLjCI1zNxBWVk_LrKm3HnnhDCb4E",       
+      "problem_task_id": 3      
+    },
+    "model": "experiment.documents",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1oJachfEH2PIEYBRATSDyDMlalHP4qebv8cSBDo0kg8s",       
+      "problem_task_id": 3      
+    },
+    "model": "experiment.documents",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1yJXOXXkxkTChT4hMblIx4YjV-4dIwJ9y9RE_mIdyezc",       
+      "problem_task_id": 4      
+    },
+    "model": "experiment.documents",
+    "pk": 17
+  },    
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1jdNqKVxVqlEiyngVPNd8-ymK3dlVM7gjpYbvYfHcq-4",       
+      "problem_task_id": 4      
+    },
+    "model": "experiment.documents",
+    "pk": 18
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=128UO3_9c0oe_BDpA9fj8oQA4Lj6uIAwTOf0PwIaeDjA",       
+      "problem_task_id": 4      
+    },
+    "model": "experiment.documents",
+    "pk": 19
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1wcGP88brdPQtNcI4nV36UmjgreHR3Bye7D23tBqGeIc",       
+      "problem_task_id": 4      
+    },
+    "model": "experiment.documents",
+    "pk": 20
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1tS_2EGoe6jKLXZ0z6tFPQSTXcH15s6JGi2s5emidmFo",       
+      "problem_task_id": 4      
+    },
+    "model": "experiment.documents",
+    "pk": 21
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1QoLmambfbP1VLEeB3a3NV4HbahzVllTWMed2QIjvFFQ",       
+      "problem_task_id": 5      
+    },
+    "model": "experiment.documents",
+    "pk": 22
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1GDlzirgeqGpVc0YX4mEharJumZidpe5ehu35uDIZ1oE",       
+      "problem_task_id": 5      
+    },
+    "model": "experiment.documents",
+    "pk": 23
+  },  
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1m5phyjR71zN0he7DU4otPmeWDZaYBWtWgo52rGm2Vkc",       
+      "problem_task_id": 5      
+    },
+    "model": "experiment.documents",
+    "pk": 24
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1dHYFuNx1QszE2wdWvP-V0_sIb8nu86NodDbe4aK-U5s",       
+      "problem_task_id": 5      
+    },
+    "model": "experiment.documents",
+    "pk": 25
+  }, 
+  {
+    "fields": {
+      "document_url": "https://drive.google.com/open?id=1Mpbh5gy0bW8HK4qhYWYmsk_Gjvzf9vDv1zyYYI_BtRM",       
+      "problem_task_id": 5      
+    },
+    "model": "experiment.documents",
+    "pk": 26
+  }
+]

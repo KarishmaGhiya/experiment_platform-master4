@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home_page'),
+    #url(r'^consent/',views.consent,name='consent'),
     url(r'^nickname/',views.nickname,name='nickname'),
     #url(r'^chats/', views.home_page, name='home_page'),
     url(r'^wait/',views.wait_room,name='waiting_room'),

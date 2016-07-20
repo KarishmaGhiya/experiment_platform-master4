@@ -6,15 +6,114 @@
 represents you and that you feel comfortable sharing with other people during this
 
 task. </h2>
-    <form class="form-signin" method="post" action="{% url 'nickname' %}">
-        {% csrf_token %}
-	
 
-        <h1 class="form-signin-heading">Choose a nickname</h1>
+    <form class="form-signin" method="post" action="{% url 'nickname' %}">
+        
+<div id = "forum-frame" class="left" style="height:700px;width:1300px;border:7px groove #ccc;padding-left:20px; padding-right:20px;overflow: auto;">
+{% csrf_token %}
+<fieldset>
+		<legend>Project Title </legend>
+		<label>Communication platform and group problem solving</label>
+	</fieldset>
+	<fieldset>
+		<legend>Purpose of the study </legend>
+		<label>This research is being conducted by <b>Yla Tausczik</b> at the University of
+
+Maryland, College Park. We are inviting you to participate in this
+
+research project because you are 18 years of age or older. The purpose
+
+of this research project is to understand how groups solve problems in
+
+different online environments.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Procedures </legend>
+		<label>The procedures involve working on a moderately difficult logic problem as
+
+a group. After finishing the logic problem you will be asked a few
+
+questions about your experience working on the problem (e.g.“Indicate the degree of confidence you have in your individual solution”), and about your background. In total the task and
+
+questionnaire should take between 15 minutes and 35 minutes. The study
+
+will take place online.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Potential Risks and Discomforts </legend>
+		<label>There are no known risks from participating in this research study</label>
+	</fieldset>
+	<fieldset>
+		<legend>Potential Benefits</legend>
+		<label>There are no direct benefits from participating in this research. We hope
+
+that, in the future, other people might benefit from this study through
+
+improved understanding of how to best design group problem solving
+
+experiences online.</label>
+</fieldset>
+	<fieldset>
+		<legend>Confidentiality</legend>
+		<label>Any potential loss of confidentiality will be minimized by storing the data
+
+on password protected computers. A copy of the data, which will exclude
+
+Amazon's Mechanical Turk worker ids and any location outliers, will be
+
+created and may be shared with other researchers and/or released
+
+publically.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Medical Treatment </legend>
+		<label>The University of Maryland does not provide any medical, hospitalization or other insurance for participants in this research study, nor will the University of Maryland provide any medical treatment or compensation for any injury sustained as a result of participation in this research study, except as required by law.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Compensation</legend>
+		<label>You will receive $1.50 for completing the study. Individuals who correctly solve the logic problem will be provided additional compensation of $1.00. You will be responsible for any taxes assessed on the compensation. </label>
+	</fieldset>
+	<fieldset>
+		<legend>Right to withdraw and Questions</legend>
+		<label>Your participation in this research is completely voluntary.  You may choose not to take part at all.  If you decide to participate in this research, you may stop participating at any time.  If you decide not to participate in this study or if you stop participating at any time, you will not be penalized or lose any benefits to which you otherwise qualify. 
+
+If you decide to stop taking part in the study, if you have questions, concerns, or complaints, or if you need to report an injury related to the research, please contact the investigator: 
+<b>Yla Tausczik
+College of Information Studies
+Hornbake Building South
+College Park, MD 20742
+301-405-2058
+ylatau@umd.edu</b></label>
+	</fieldset>
+	<fieldset>
+		<legend>Participant Rights</legend>
+		<label>If you have questions about your rights as a research participant or wish to report a research-related injury, please contact: 
+<b>
+University of Maryland College Park 
+Institutional Review Board Office
+1204 Marie Mount Hall
+College Park, Maryland, 20742
+ E-mail: irb@umd.edu  
+Telephone: 301-405-0678
+</b>
+This research has been reviewed according to the University of Maryland, College Park IRB procedures for research involving human subjects.</label>
+	</fieldset>
+</div><br/>
+<div style:"clear:left;width:1350px;">
+	<fieldset>
+
+		<label>Statement of Consent:</label>
+		<h2>By proceeding with this survey, you indicate that you are at least 18 years of age. You have read this consent form or have had it read to you. <br/>Your questions have been answered to your satisfaction and you voluntarily agree to participate in this research study. <br/>You may print a copy of this consent form. If you agree to participate, please click ‘I Agree’ below.</h2>
+	</fieldset>
+
+	<input type="checkbox" value= "check-true" id="check" required autofocus>Agree<br/>
+        <h2 class="form-signin-heading"><b>Choose a nickname:</b></h2>
         <label for="inputUsername" class="sr-only">Nickname</label>
-        <input type="text" name="nickname" maxlength="20" id="inputUsername" class="form-control has-error" placeholder="Nickname"
-               required autofocus>
+        <input type="text" name="nickname" style="width:20em;" maxlength="20em" id="inputUsername" class="form-control has-error" placeholder="Nickname"
+               required autofocus><br/>
         <button class="btn btn-lg btn-primary btn-block" style="width:10em; height : 2em;text-align:center;"  type="submit">Submit</button>
+</div>
     </form>
+
 {% endblock %}
 

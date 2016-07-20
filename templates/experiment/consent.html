@@ -1,0 +1,144 @@
+{% extends 'experiment/base_exp.html' %}
+
+{% block content %}
+<!--div style="align:left;">
+<iframe name="doc" id="doc" height="1000" width="850" src="https://docs.google.com/document/d/1LgMqr47mPdBplSPVD8ojE2H7bp8XUyJu4ThyKUQTF1k/edit"></iframe>
+</div-->
+<h1>University of Maryland College Park</h1>
+<form method="post" action="{% url 'consent' %}" >
+	{% csrf_token %}
+	<fieldset>
+		<legend>Project Title </legend>
+		<label>Communication platform and group problem solving</label>
+	</fieldset>
+	<fieldset>
+		<legend>Purpose of the study </legend>
+		<label>This research is being conducted by <b>Yla Tausczik</b> at the University of
+
+Maryland, College Park. We are inviting you to participate in this
+
+research project because you are 18 years of age or older. The purpose
+
+of this research project is to understand how groups solve problems in
+
+different online environments.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Procedures </legend>
+		<label>The procedures involve working on a moderately difficult logic problem as
+
+a group. After finishing the logic problem you will be asked a few
+
+questions about your experience working on the problem (e.g. **** Insert
+
+question here ****), and about your background. In total the task and
+
+questionnaire should take between 15 minutes and 35 minutes. The study
+
+will take place online.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Potential Risks and Discomforts </legend>
+		<label>There are no known risks from participating in this research study</label>
+	</fieldset>
+	<fieldset>
+		<legend>Potential Benefits</legend>
+		<label>There are no direct benefits from participating in this research. We hope
+
+that, in the future, other people might benefit from this study through
+
+improved understanding of how to best design group problem solving
+
+experiences online.</label>
+
+
+	</fieldset>
+	<fieldset>
+		<legend>Confidentiality</legend>
+		<label>Any potential loss of confidentiality will be minimized by storing the data
+
+on password protected computers. A copy of the data, which will exclude
+
+Amazon's Mechanical Turk worker ids and any location outliers, will be
+
+created and may be shared with other researchers and/or released
+
+publically.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Medical Treatment </legend>
+		<label>The University of Maryland does not provide any medical, hospitalization or other insurance for participants in this research study, nor will the University of Maryland provide any medical treatment or compensation for any injury sustained as a result of participation in this research study, except as required by law.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Compensation</legend>
+		<label>You will receive **** X *** for completing the study. Individuals who correctly solve the logic problem will be provided additional compensation of **** Y *****. You will be responsible for any taxes assessed on the compensation. </label>
+	</fieldset>
+	<fieldset>
+		<legend>Right to withdraw and Questions</legend>
+		<label>Your participation in this research is completely voluntary.  You may choose not to take part at all.  If you decide to participate in this research, you may stop participating at any time.  If you decide not to participate in this study or if you stop participating at any time, you will not be penalized or lose any benefits to which you otherwise qualify. 
+
+If you decide to stop taking part in the study, if you have questions, concerns, or complaints, or if you need to report an injury related to the research, please contact the investigator: 
+<b>Yla Tausczik
+College of Information Studies
+Hornbake Building South
+College Park, MD 20742
+301-405-2058
+ylatau@umd.edu</b></label>
+	</fieldset>
+	<fieldset>
+		<legend>Participant Rights</legend>
+		<label>If you have questions about your rights as a research participant or wish to report a research-related injury, please contact: 
+<b>
+University of Maryland College Park 
+Institutional Review Board Office
+1204 Marie Mount Hall
+College Park, Maryland, 20742
+ E-mail: irb@umd.edu  
+Telephone: 301-405-0678
+</b>
+This research has been reviewed according to the University of Maryland, College Park IRB procedures for research involving human subjects.</label>
+	</fieldset>
+	<fieldset>
+		<legend>Statement of Consent</legend>
+		<label>By proceeding with this survey, you indicate that you are at least 18 years of age; you have read this consent form or have had it read to you; your questions have been answered to your satisfaction and you voluntarily agree to participate in this research study. You may print a copy of this consent form. If you agree to participate, please click ‘I Agree’ below.</label>
+	</fieldset>
+	<input type="checkbox" value= "check-true" id="check">Agree<br/>
+	<input type="submit" value="Submit">
+</form>
+<!--table style="width:100%">
+  <caption>Consent Form</caption>
+  <tr>
+    <th>Project Title</th>
+    <td>Communication platform and group problem solving</td>
+  </tr>
+  <tr>
+    <th>Purpose of the study</th>
+    <td>This research is being conducted by <b>Yla Tausczik</b> at the University of
+
+Maryland, College Park. We are inviting you to participate in this
+
+research project because you are 18 years of age or older. The purpose
+
+of this research project is to understand how groups solve problems in
+
+different online environments.</td>
+  </tr>
+  <tr>
+    <th>Procedures</th>
+    <td>This research is being conducted by Yla Tausczik at the University of
+
+Maryland, College Park. We are inviting you to participate in this
+
+research project because you are 18 years of age or older. The purpose
+
+of this research project is to understand how groups solve problems in
+
+different online environments.</td>
+  </tr>
+</table-->
+
+
+<div style="align:right;">
+<a href="{% url 'nickname' %}" >Next>></a>
+</div>
+{% endblock %}
