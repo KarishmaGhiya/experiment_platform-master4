@@ -136,7 +136,7 @@ class Crowd(models.Model):
 	)
 	#COMMUNICATION CONDITION via chat or forum
     communication = models.CharField(choices = COMMUNICATION_CHOICES, default = CHAT_COMMUNICATION ,max_length=255)
-    doc = models.OneToOneField(Documents, unique= True)
+    doc = models.OneToOneField(Documents, default=None,unique= True)
 	#@property
     objects = CrowdManager()
 	

@@ -4,7 +4,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect
 import haikunator
 from .models import Room
-from experiment.models import Crowd_Members, Crowd, Problem, ProblemHint, UserHints
+from experiment.models import Crowd_Members, Crowd, Problem, ProblemHint, UserHints, Documents
 
 def about(request):
     return render(request, "chat/about.html")
@@ -53,7 +53,10 @@ def chat_room(request, label):
         uhints = [uh.hint.hint_text for uh in uhints]
         # We want to show the last 50 messages, ordered most-recent-last
         messages = reversed(room.messages.order_by('-timestamp')[:50])
-
+	try:
+            cm_document = Documents.objects.get(id=cm.crowd.doc.id)
+        except Documents.DoesNotExist:
+            return render(request,'experiment/error.html',{"message":"no document"}) 
         return render(request, "chat/room.html", {
             'room': room,
             'messages': messages,

@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '5(#fzhayis6swap)-fqu&y3*h$0d4w)h2tr5z!rnyz$uf=oy1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = False
 DEBUG = True
 
 
-
+#ALLOWED_HOSTS = [u'crowdps2.umd.edu']
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -70,7 +70,7 @@ TEMPLATES = (
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'debug': FALSE,
+            'debug': DEBUG,
         },
     },
 )
