@@ -80,7 +80,7 @@ class CrowdManager(models.Manager):
 		crowds = Crowd.objects.all()
 		which_crowd = 0
 		#Check which crowd is not full,  and get that crowd id	
-		cr = Crowd.objects.select_related().annotate(num_members=Count('members'))
+		cr = Crowd.objects.filter(is_active=1).select_related().annotate(num_members=Count('members'))
 		#print A[0].num_B	
 
 		for (i,crowd) in enumerate(crowds):	
@@ -137,6 +137,7 @@ class Crowd(models.Model):
 	#COMMUNICATION CONDITION via chat or forum
     communication = models.CharField(choices = COMMUNICATION_CHOICES, default = CHAT_COMMUNICATION ,max_length=255)
     doc = models.OneToOneField(Documents, default=None,unique= True)
+    is_active = models.IntegerField(default=1)
 	#@property
     objects = CrowdManager()
 	
@@ -146,7 +147,7 @@ class Crowd_Members(models.Model):
     user = models.ForeignKey(User, unique = True)
     time_joined = models.DateTimeField(default=timezone.now)
     cohort_id = models.PositiveIntegerField()
-
+    member_num = models.IntegerField(default=None)
 
 
 class UserHints(models.Model):

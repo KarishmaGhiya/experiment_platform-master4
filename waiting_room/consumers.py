@@ -56,7 +56,7 @@ def wait_connect(message):
         which_crowd = Crowd.objects.Crowd_which_assign()
 
         log.debug("which_crowd=%d",which_crowd)
-        crowd =  Crowd.objects.get(id = which_crowd)
+        crowd =  Crowd.objects.get(id = which_crowd)##
         cohortid = randint(1,100000)
 
         for u in userlist:
