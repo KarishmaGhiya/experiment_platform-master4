@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import logging
 from django.db.models import Count
 from random import randint, sample
-from datetime import datetime, timedelta
+
 
 log = logging.getLogger(__name__)
 # Create your models here.
@@ -77,18 +77,13 @@ class CrowdManager(models.Manager):
 	def Crowd_which_assign(self):
 		CHAT_COMMUNICATION = '_chat'
 		FORUM_COMMUNICATION = '_forum'
-		#Filter for date = today & creation time > an hour ago
 		crowds = Crowd.objects.all()
-		time_threshold = datetime.now() - timedelta(hours=0.5)
-		crowds_recent = crowds.filter(creation_date__gt=time_threshold)
-		
-		
 		which_crowd = 0
 		#Check which crowd is not full,  and get that crowd id	
-		cr = Crowd.objects.select_related().annotate(num_members=Count('members'))
+		cr = Crowd.objects.filter(is_active=1).select_related().annotate(num_members=Count('members'))
 		#print A[0].num_B	
 
-		for (i,crowd) in enumerate(crowds_recent):	
+		for (i,crowd) in enumerate(crowds):	
 			log.debug(crowd.size)
 			log.debug(cr[i].num_members)
 			if cr[i].num_members < crowd.size :
@@ -119,32 +114,6 @@ class CrowdManager(models.Manager):
 
 		return which_crowd
 
-	def Crowd_assign(self):
-		CHAT_COMMUNICATION = '_chat'
-		FORUM_COMMUNICATION = '_forum'
-		#Filter for date = today & creation time > half an hour ago
-		crowds = Crowd.objects.all()
-		time_threshold = datetime.now() - timedelta(hours=0.5)
-		crowds_recent = crowds.filter(creation_date__gt=time_threshold)
-		
-		
-		which_crowd = 0
-		#Check which crowd is not full,  and get that crowd id	
-		cr = Crowd.objects.select_related().annotate(num_members=Count('members'))
-		#print A[0].num_B	
-
-		for (i,crowd) in enumerate(crowds_recent):	
-			log.debug(crowd.size)
-			log.debug(cr[i].num_members)
-			if cr[i].num_members < crowd.size and crowd.size == 30 :
-				which_crowd = crowd.id
-				break
-
-		#if all crowds are full, crowd id = 0 , create a new crowd and get that crowd id
-		
-
-		return which_crowd
-
 
 
 class Crowd(models.Model):
@@ -168,7 +137,6 @@ class Crowd(models.Model):
 	#COMMUNICATION CONDITION via chat or forum
     communication = models.CharField(choices = COMMUNICATION_CHOICES, default = CHAT_COMMUNICATION ,max_length=255)
     doc = models.OneToOneField(Documents, default=None,unique= True)
-    creation_date = models.DateTimeField(default=timezone.now, db_index=True)
     is_active = models.IntegerField(default=1)
 	#@property
     objects = CrowdManager()
@@ -182,11 +150,11 @@ class Crowd_Members(models.Model):
     member_num = models.IntegerField(default=None)
 
 
-'''class UserHints(models.Model):
+class UserHints(models.Model):
     user = models.ForeignKey(User)
     crowd = models.ForeignKey(Crowd)
     problem = models.ForeignKey(Problem)
-    hint = models.ForeignKey(ProblemHint)'''
+    hint = models.ForeignKey(ProblemHint)
 
 class Questions(models.Model):
     worker = models.OneToOneField(User, primary_key = True)
@@ -254,23 +222,4 @@ class TaskUser(models.Model):
     
   
 
-class Profile(models.Model):
-	problem = models.ForeignKey(Problem)
-	
-	GROUP_SIZE = 3
-    	CROWD_SIZE = 30
-    	SIZE_CHOICES = (
-	    (GROUP_SIZE, '_group'),
-	    (CROWD_SIZE, '_crowd'), 
-          )
-	#size of 3 or 30
-	crowd_size = models.PositiveIntegerField(choices = SIZE_CHOICES, default=GROUP_SIZE)
-	
-class ProfileHint(models.Model):
-    profile_id = models.ForeignKey(Profile)    
-    problem = models.ForeignKey(Problem)
-    hint = models.ForeignKey(ProblemHint)
 
-class UserProfile(models.Model):
-    user_id = models.ForeignKey(User)
-    profile_id = models.ForeignKey(Profile)

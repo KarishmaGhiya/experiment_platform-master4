@@ -80,9 +80,38 @@ def nickname(request):
             userexp = ExpUser.objects.create(user=myuser,nickname=nickname,expstage="wait_room",secret_code = s)	    
 	    consent_user = Consent_form.objects.create(user=myuser,agree='signed')
 
-            return redirect('experiment.views.wait_room')
+            return redirect('experiment.views.before_task')
 
         return render(request,'experiment/nickname.html')
+    else:
+        return redirect('experiment.views.home_page')
+
+def before_task(request):
+    if request.user.is_authenticated(): 
+		if request.method == "POST":
+			#check crowd id of empty crowd
+        		which_crowd = Crowd.objects.Crowd_which_assign()
+
+		        log.debug("which_crowd=%d",which_crowd)
+		        crowd =  Crowd.objects.get(id = which_crowd)
+			#count_existing = Crowd_Members.objects.raw("SELECT COUNT(*) AS obj_count FROM experiment_crowd_members WHERE crowd_id=%s",[which_crowd])
+			count_existing = Crowd_Members.objects.filter(crowd=crowd).count()
+			member_num = count_existing
+			cohortid = (count_existing)/3
+			crowd.members.create(user=request.user,crowd=crowd,cohort_id=cohortid,member_num=member_num)
+			eu = ExpUser.objects.get(user=request.user)
+            		eu.expstage = "task"
+	                eu.save()
+			task_url=''
+            		if crowd.communication == '_forum':
+		            task_url='http://crowdps.umd.edu/forum/room'
+		        elif crowd.communication == '_chat':
+		            task_url='http://crowdps.umd.edu/chat/room'
+        		task_url += str(which_crowd)
+		
+			return redirect(task_url)
+
+      		return render(request,'experiment/wait_before_task.html')
     else:
         return redirect('experiment.views.home_page')
 
@@ -90,6 +119,8 @@ def finish(request):
     if request.user.is_authenticated(): 
 	u = ExpUser.objects.get(user=request.user)
 	s = u.secret_code
+	u.stage = "finish"
+        u.save()
         return render(request,'experiment/finish.html',{"secret_code":s})
     else:
         return redirect('experiment.views.home_page')
@@ -144,6 +175,9 @@ def survey(request):
 		Country = request.POST.get('country')
 		HITs = request.POST.get('HITs')
 		myuser = request.user
+		u = ExpUser.objects.get(user=request.user)
+		u.stage = "survey"
+        	u.save()
 		question_user = Questions.objects.create(worker=myuser,GrpSol=GrpSol, InvSolWife=InvSolWife, InvSolJob=InvSolJob, InvSolCity=InvSolCity, DegConf=DegConf, Diff=Diff,GrpExp1_1=GrpExp1_1,GrpExp1_2=GrpExp1_2, GrpExp1_3=GrpExp1_3,GrpExp1_4=GrpExp1_4,GrpExp1_5=GrpExp1_5,GrpExp1_6=GrpExp1_6,GrpExp1_7=GrpExp1_7,GrpExp2=GrpExp2, Sex=Sex,Age=Age, Edu=Edu,Empl_schoolFull=Empl_schoolFull,Empl_schoolPart =Empl_schoolPart,Empl_part =Empl_part,Empl_full=Empl_full,Country=Country,HITs=HITs )
 		return redirect('experiment.views.finish')	
 
