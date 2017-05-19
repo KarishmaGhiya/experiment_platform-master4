@@ -2,9 +2,13 @@ import random
 import string
 from django.db import transaction
 from django.shortcuts import render, redirect
+from django.core import serializers
 import haikunator
 from .models import Room
-from experiment.models import Crowd_Members, Crowd, Problem, ProblemHint, ProfileHint,UserProfile, Profile, Documents
+from experiment.models import Crowd_Members, Crowd,  ProblemHint, ProfileHint,UserProfile, Profile, ExpUser
+import logging
+
+log = logging.getLogger(__name__)
 
 def about(request):
     return render(request, "chat/about.html")
@@ -43,41 +47,51 @@ def chat_room(request, label):
             return render(request,'experiment/error.html',{"message":"no crowd assignment"}) 
 
 	#link user to profile
-	pro_id = Profile.objects.raw('SELECT * FROM experiment_profile WHERE problem=%s AND crowd_size=%s AND id NOT IN (SELECT profile_id FROM experiment_userprofile WHERE profile_id IS NOT NULL)',[cm.crowd.Problem,cm.crowd.size])
-	up = UserProfile.objects.create(user_id=request.user,profile_id=pro_id)
-	list_hintId =ProfileHint.objects.get(profile_id=up.profile_id)
-	uhints = []
-	for h in list_hintId:
-		uhints.append(h.hint.hint_text)
-        '''
-        # create or get userhint
-        uhints = UserHints.objects.filter(user=request.user)
-        if len(uhints)==0:
-            hints = ProblemHint.objects.random(cm.cohort_id,cm.crowd.Problem.id)
-            uhints = []
-            for h in hints:
-                uh = UserHints.objects.create(user=request.user,crowd=cm.crowd,problem=cm.crowd.Problem,hint=h)
-                uhints.append(uh)
-        uhints = [uh.hint.hint_text for uh in uhints]
-	'''        
+	up1 = UserProfile.objects.filter(user=request.user,crowd=cm.crowd).first()
+	if up1:
+		pro_hint_list = ProfileHint.objects.filter(person_id=up1.profile.person_id,version_id=cm.crowd.version_id, crowd_size = cm.crowd.size)
+		
+
+	else:
+		pro_id = Profile.objects.raw('SELECT * FROM experiment_profile WHERE version_id=%s AND crowd_size=%s AND id NOT IN (SELECT profile_id FROM experiment_userprofile WHERE profile_id IS NOT NULL AND crowd_id = %s) ORDER BY id LIMIT 1',[cm.crowd.version_id,cm.crowd.size, cm.crowd.id])[0]
+        	log.debug(pro_id.id)
+		log.debug(cm.crowd.version_id)
+		log.debug(cm.crowd.size)
+		log.debug(cm.crowd.id)
+        	pro = Profile.objects.get(id=pro_id.id)
+		#return render(request,'experiment/error.html',{"message":pro_id)})
+		up = UserProfile.objects.create(user=request.user,profile=pro_id, crowd = cm.crowd)
+        
+		pro_hint_list = ProfileHint.objects.filter(person_id=pro.person_id,version_id=cm.crowd.version_id, crowd_size = cm.crowd.size)
+	#list_hintId =ProfileHint.objects.get(profile_id=up.profile_id, version_id=cm.crowd.version_id, crowd_size = cm.crowd.size)
+	hint_list1 = []
+	for hint in pro_hint_list:
+		log.debug(hint.hint_id)
+		hint_list1.append(ProblemHint.objects.get(id=hint.hint_id))
+		
+
+	hint_list = serializers.serialize( "python", hint_list1)
+	log.debug("collection of obj")
+	log.debug(hint_list)
+	
+	
 	# We want to show the last 50 messages, ordered most-recent-last
         messages = reversed(room.messages.order_by('-timestamp')[:50])
 	try:
-            cm_document = Documents.objects.get(id=cm.crowd.doc.id)
+           
 	    if cm.crowd.size == 30 :
-		disp = "You're in a crowd of 30 people"
+		disp = "You're in a crowd of 30 people."
 	    elif cm.crowd.size == 3:
-		disp = "You're in a group of 3 people"
+		disp = "You're in a group of 3 people."
 	    else:
-		disp = "unknown size"
+		disp = "You're in a group of Unknown size."
         except Documents.DoesNotExist:
             return render(request,'experiment/error.html',{"message":"no document"}) 
         return render(request, "chat/room.html", {
             'room': room,
             'messages': messages,
-            'problem':cm.crowd.Problem.instructions,
-            'hints':uhints,
-	    'url':cm_document.document_url,
+            'hints': hint_list,
+	    
 	    'disp': disp
         })
     else:

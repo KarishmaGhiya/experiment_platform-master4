@@ -28,49 +28,25 @@ class ExpUser(models.Model):
 
 
 
-class ProblemManager(models.Manager):
+'''class ProblemManager(models.Manager):
 
     def random(self):
         count = self.aggregate(count=Count('id'))['count']
         random_index = randint(0, count - 1)
-        return self.all()[random_index]
+        return self.all()[random_index]'''
 
 
-class Problem(models.Model):
-    prob_num = models.IntegerField()
-    instructions = models.TextField()
-    
-	#@property
-    objects = ProblemManager()
 
-class ProblemHintManager(models.Manager):
-
-    def random(self, cohort, task):
-        
-	#cohort how???? assignment of cohort in consumers.py? 
-	#all_unique = ProblemHint.objects.raw('SELECT h.* FROM (SELECT uh.hint_id FROM experiment_userhints AS uh JOIN experiment_crowd_members AS cm ON uh.user_id=cm.user_id WHERE cohort_id=%s'[cohort]') AS u RIGHT JOIN experiment_problemhint AS h ON u.hint_id=h.id WHERE ISNULL(u.hint_id) AND h.problem_id=%s'[task]' AND h.hint_type="unique"')
-	all_unique = ProblemHint.objects.raw('SELECT h.* FROM (SELECT uh.hint_id FROM experiment_userhints AS uh JOIN experiment_crowd_members AS cm ON uh.user_id=cm.user_id WHERE cohort_id=%s) AS u RIGHT JOIN experiment_problemhint AS h ON u.hint_id=h.id WHERE ISNULL(u.hint_id) AND h.problem_id=%s AND h.hint_type="unique"',[cohort, task])
-        random_ints1 = sample(range(0,len(list(all_unique))),2)#is this correct???? should it be count of all_unique?
-        random_sample1 = [obs for (i,obs) in enumerate(all_unique) if i in random_ints1] 
-
-	all_shared = ProblemHint.objects.raw('SELECT h.* FROM (SELECT uh.hint_id,count(*) AS hintcount FROM experiment_userhints AS uh JOIN experiment_crowd_members AS cm ON uh.user_id=cm.user_id WHERE cohort_id=%s) AS u RIGHT JOIN experiment_problemhint AS h ON u.hint_id=h.id WHERE (ISNULL(u.hint_id) OR u.hintcount=1) AND h.problem_id=%s AND h.hint_type="shared"',[cohort, task])
-	random_ints2 = sample(range(0,len(list(all_shared))),4)#is this correct???? should it be count of all_SHARED?
-        random_sample2 = [obs for (i,obs) in enumerate(all_shared) if i in random_ints2] 
-	random_sample = random_sample1 + random_sample2
-	
-        return random_sample
 
 class ProblemHint(models.Model):
-    problem = models.ForeignKey(Problem, related_name = 'hints')
-    hint_num = models.IntegerField()
     hint_type = models.CharField(max_length=255)
-    hint_text = models.TextField()
-    
-    objects = ProblemHintManager()        
+    candidate_1 = models.CharField(max_length=255)
+    candidate_2 = models.CharField(max_length=255)
+    candidate_3 = models.CharField(max_length=255)
+    candidate_4 = models.CharField(max_length=255)
+            
  
-class Documents(models.Model):
-	document_url = models.TextField()
-	problem_task = models.ForeignKey(Problem)
+
        
 class CrowdManager(models.Manager):
 
@@ -79,7 +55,7 @@ class CrowdManager(models.Manager):
 		FORUM_COMMUNICATION = '_forum'
 		#Filter for date = today & creation time > an hour ago
 		crowds = Crowd.objects.all()
-		time_threshold = datetime.now() - timedelta(hours=0.5)
+		time_threshold = datetime.now() - timedelta(hours=1) ####UPDATE THE TIME WINDOW AFTER CREATION OF ROOM/FORUM
 		crowds_recent = crowds.filter(creation_date__gt=time_threshold)
 		
 		
@@ -99,32 +75,27 @@ class CrowdManager(models.Manager):
 		if which_crowd == 0 :
 			#write logic to assign chat/forum, size, task
 			## choose size of crowd
-			crowd_size = [3,30]
-			rsize = sample(crowd_size,1)[0]
+			###crowd_size = [3,30]
+			###rsize = sample(crowd_size,1)[0]
+			rsize = 3
 			rcom = FORUM_COMMUNICATION
 			if rsize==3:
 			    rcom = sample([CHAT_COMMUNICATION,FORUM_COMMUNICATION],1)[0]
-
-			rproblem = Problem.objects.random()
-			#Documents.objects.raw('SELECT d.* FROM experiment_crowd as c right join experiment_crowd_docs as d on c.doc=d.id where isnull(c.crowd) and d.task=[insert task]')	
-			all_docs =Documents.objects.raw('SELECT d.* FROM experiment_crowd AS c RIGHT JOIN experiment_documents AS d ON c.doc_id=d.id WHERE ISNULL(c.id) AND d.problem_task_id=%s',[rproblem.id]) 
-			'''for d in all_docs:
-				print("%s is the url for doc %s"% (d.document_url,d.id))'''
-			#print("%s is %s." % (p.first_name, p.age))
-			rdoc = all_docs[0]
-			new_crowd = Crowd.objects.create(Problem=rproblem,size=rsize,communication = rcom, doc = rdoc)
-			#new_crowd = Crowd.objects.create(Problem=rproblem,size=rsize,communication = rcom)
+			####UPDATE THE VERSION FOR CROWD ASSIGNMENT EACH TIME YOU RUN EXP
+			version = 8
+			new_crowd = Crowd.objects.create(version_id=version,size=rsize,communication = rcom)
+			
 			which_crowd = new_crowd.id	
-			#set google doc to crowd
+			
 
 		return which_crowd
 
 	def Crowd_assign(self):
 		CHAT_COMMUNICATION = '_chat'
 		FORUM_COMMUNICATION = '_forum'
-		#Filter for date = today & creation time > half an hour ago
+		#Filter for date = today & creation time > two hour ago
 		crowds = Crowd.objects.all()
-		time_threshold = datetime.now() - timedelta(hours=0.5)
+		time_threshold = datetime.now() - timedelta(hours=2)
 		crowds_recent = crowds.filter(creation_date__gt=time_threshold)
 		
 		
@@ -149,8 +120,8 @@ class CrowdManager(models.Manager):
 
 class Crowd(models.Model):
 	#crowd-id: automatically added 
-    Problem = models.ForeignKey(Problem)
-
+   
+    version_id = models.PositiveIntegerField()
     GROUP_SIZE = 3
     CROWD_SIZE = 30
     SIZE_CHOICES = (
@@ -167,7 +138,7 @@ class Crowd(models.Model):
 	)
 	#COMMUNICATION CONDITION via chat or forum
     communication = models.CharField(choices = COMMUNICATION_CHOICES, default = CHAT_COMMUNICATION ,max_length=255)
-    doc = models.OneToOneField(Documents, default=None,unique= True)
+    
     creation_date = models.DateTimeField(default=timezone.now, db_index=True)
     is_active = models.IntegerField(default=1)
 	#@property
@@ -176,7 +147,7 @@ class Crowd(models.Model):
 
 class Crowd_Members(models.Model):
     crowd = models.ForeignKey(Crowd, on_delete = models.CASCADE, related_name = 'members')
-    user = models.ForeignKey(User, unique = True)
+    user = models.OneToOneField(User)
     time_joined = models.DateTimeField(default=timezone.now)
     cohort_id = models.PositiveIntegerField()
     member_num = models.IntegerField(default=None)
@@ -191,9 +162,8 @@ class Crowd_Members(models.Model):
 class Questions(models.Model):
     worker = models.OneToOneField(User, primary_key = True)
     GrpSol = models.TextField()  
-    InvSolWife = models.TextField()
-    InvSolJob = models.TextField()
-    InvSolCity = models.TextField()
+    InvSol = models.TextField()
+    
     DegConf = models.IntegerField()
     Diff = models.TextField()
     GrpExp1_1 = models.PositiveIntegerField()
@@ -255,8 +225,8 @@ class TaskUser(models.Model):
   
 
 class Profile(models.Model):
-	problem = models.ForeignKey(Problem)
-	
+        person_id = models.PositiveIntegerField()
+	version_id = models.PositiveIntegerField()
 	GROUP_SIZE = 3
     	CROWD_SIZE = 30
     	SIZE_CHOICES = (
@@ -267,10 +237,23 @@ class Profile(models.Model):
 	crowd_size = models.PositiveIntegerField(choices = SIZE_CHOICES, default=GROUP_SIZE)
 	
 class ProfileHint(models.Model):
-    profile_id = models.ForeignKey(Profile)    
-    problem = models.ForeignKey(Problem)
+    person_id = models.PositiveIntegerField()
+    version_id = models.PositiveIntegerField()    
     hint = models.ForeignKey(ProblemHint)
+    GROUP_SIZE = 3
+    CROWD_SIZE = 30
+    SIZE_CHOICES = (
+	    (GROUP_SIZE, '_group'),
+	    (CROWD_SIZE, '_crowd'), 
+          )
+    #size of 3 or 30
+    crowd_size = models.PositiveIntegerField(choices = SIZE_CHOICES, default=GROUP_SIZE)
 
 class UserProfile(models.Model):
-    user_id = models.ForeignKey(User)
-    profile_id = models.ForeignKey(Profile)
+    user = models.ForeignKey(User)
+    profile = models.ForeignKey(Profile)
+    crowd = models.ForeignKey(Crowd)
+
+
+
+

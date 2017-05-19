@@ -1,0 +1,1134 @@
+[
+  
+  {
+    "fields": {
+      "hint_type": "Analogies",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "+"
+    
+    },
+    "model": "experiment.problemhint",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "hint_type": "Verbal Comprehension",
+      "candidate_1": "-",
+      "candidate_2": "+",
+      "candidate_3": "+",
+      "candidate_4": "+"
+    },
+    "model": "experiment.problemhint",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "hint_type": "Spelling",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "0",
+      "candidate_4": "-"
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "hint_type": "Verbal Reasoning",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "+"
+    },
+    "model": "experiment.problemhint",
+    "pk": 4
+  },
+  {
+    "fields": {
+    
+     "hint_type": "Number sequences",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "+"
+     
+    },
+    "model": "experiment.problemhint",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "hint_type": "Data interpretation",
+      "candidate_1": "-",
+      "candidate_2": "+",
+      "candidate_3": "0",
+      "candidate_4": "+" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "hint_type": "Arithmetic",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "+" 
+      
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "hint_type": "Letters-to-Numbers",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "0",
+      "candidate_4": "-"     
+
+    },
+    "model": "experiment.problemhint",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "hint_type": "N5",
+      "candidate_1": "-",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "hint_type": "Shape Matching",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "+" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 10
+  },
+  {
+    "fields": {
+       "hint_type": "3D Views",
+      "candidate_1": "0",
+      "candidate_2": "+",
+      "candidate_3": "+",
+      "candidate_4": "+" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "hint_type": "Missing Shape",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "+" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 12
+  },
+  
+  {
+    "fields": {
+        
+      "hint_type": "Map interpretation",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "0",
+      "candidate_4": "-" 
+        
+
+    },
+    "model": "experiment.problemhint",
+    "pk": 13
+  },
+  {
+    "fields": {
+     "hint_type": "Rotated shapes",
+      "candidate_1": "-",
+      "candidate_2": "0",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "hint_type": "Combining shapes",
+      "candidate_1": "0",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "-" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 15
+  },
+  {
+    "fields": {
+       "hint_type": "Analogies",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "hint_type": "Verbal Comprehension",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "+" 
+     
+    },
+    "model": "experiment.problemhint",
+    "pk": 17
+  },
+  {
+    "fields": {
+       "hint_type": "Verbal Reasoning",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "+" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 18
+  },
+  {
+    "fields": {
+     "hint_type": "Spelling",
+      "candidate_1": "-",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "0" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 19
+  },
+  {
+    "fields": {
+     "hint_type": "Grammar",
+      "candidate_1": "-",
+      "candidate_2": "0",
+      "candidate_3": "0",
+      "candidate_4": "+" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "hint_type": "Antonyms",
+      "candidate_1": "-",
+      "candidate_2": "0",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 21
+  },
+  {
+    "fields": {
+     "hint_type": "Number sequences",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+    },
+    "model": "experiment.problemhint",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "hint_type": "Data interpretation",
+      "candidate_1": "+",
+      "candidate_2": "-",
+      "candidate_3": "+",
+      "candidate_4": "0" 
+     
+    },
+    "model": "experiment.problemhint",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "hint_type": "Arithmetic",
+      "candidate_1": "+",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "+" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "hint_type": "Letters-to-Numbers",
+      "candidate_1": "-",
+      "candidate_2": "+",
+      "candidate_3": "-",
+      "candidate_4": "0" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 25
+  },
+   {
+    "fields": {
+      "hint_type": "N5",
+      "candidate_1": "-",
+      "candidate_2": "-",
+      "candidate_3": "-",
+      "candidate_4": "+" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "hint_type": "N6",
+      "candidate_1": "-",
+      "candidate_2": "0",
+      "candidate_3": "+",
+      "candidate_4": "-" 
+      
+    },
+    "model": "experiment.problemhint",
+    "pk": 27
+  },
+  {
+    "fields": {  
+      "person_id": 1,
+      "version_id": 1,
+      "crowd_size": 3
+    },
+    "model": "experiment.profile",
+    "pk": 1
+  },   
+  {
+    "fields": {   
+      "person_id": 2,
+      "version_id": 1,
+      "crowd_size": 3
+    },
+    "model": "experiment.profile",
+    "pk": 2
+  },   
+  {
+    "fields": {
+      "person_id": 3,
+      "version_id": 1,
+      "crowd_size": 3
+    },
+    "model": "experiment.profile",
+    "pk": 3
+  },   
+  {
+    "fields": {     
+      "person_id": 4,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 4
+  },   
+  {
+    "fields": {      
+       "person_id": 5,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 5
+  },   
+  {
+    "fields": {    
+       "person_id": 6,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 6
+  },  
+  {
+    "fields": {    
+       "person_id": 1,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 7
+  },  
+  {
+    "fields": {    
+       "person_id": 2,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 8
+  },  
+    {
+    "fields": {    
+       "person_id": 3,
+      "version_id": 1,
+      "crowd_size": 30
+    },
+    "model": "experiment.profile",
+    "pk": 9
+  },  
+   {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 1,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 1
+  },
+   {
+    "fields": {  
+    "person_id":1,
+      "version_id": 1,
+      "hint_id": 2,
+      "crowd_size":3
+      
+    },
+    "model": "experiment.profilehint",
+    "pk": 2
+  },
+  {
+    "fields": {  
+     "person_id":1,
+      "version_id": 1,
+      "hint_id": 3,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 3
+  },    
+  {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 4,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 4
+  },
+  {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 5,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 5
+  },
+  {
+    "fields": {  
+     "person_id":1,
+      "version_id": 1,
+      "hint_id": 6,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 6
+  },
+  {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 7,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 7
+  },
+ {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 8,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 8
+  },
+  {
+    "fields": {  
+     "person_id":1,
+      "version_id": 1,
+      "hint_id": 9,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 9
+  },
+  {
+    "fields": {  
+     "person_id":1,
+      "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 10
+  },
+  {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 8,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 11
+  },
+  {
+    "fields": {  
+       "person_id":2,
+      "version_id": 1,
+      "hint_id": 9,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 12
+  },
+  {
+    "fields": {  
+       "person_id":2,
+      "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 13
+  },
+ {
+    "fields": {  
+     "person_id":2,
+      "version_id": 1,
+      "hint_id": 11,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 14
+  },
+   {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 12,
+      "crowd_size":3
+      
+    },
+    "model": "experiment.profilehint",
+    "pk": 15
+  },
+   {
+    "fields": {  
+       "person_id":2,
+      "version_id": 1,
+      "hint_id": 13,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 16
+  },
+  {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 14,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 17
+  },
+    {
+    "fields": {  
+     "person_id":3,
+      "version_id": 1,
+      "hint_id": 2,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 18
+  },
+    {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 3,
+      "crowd_size":3
+     
+    },
+    "model": "experiment.profilehint",
+    "pk": 19
+  },
+    {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 4,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 20
+  },
+    {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 5,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 21
+  },
+ {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 6,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 22
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 7,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 23
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 8,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 24
+  },
+  {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":3
+    },
+    "model": "experiment.profilehint",
+    "pk": 25
+  },
+  {
+    "fields": {  
+      "person_id":1,
+       "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 26
+  },
+  {
+    "fields": {  
+      "person_id":1,
+       "version_id": 1,
+      "hint_id": 11,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 27
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 12,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 28
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 13,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 29
+  },
+  {
+    "fields": {  
+      "person_id":1,
+       "version_id": 1,
+      "hint_id": 14,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 30
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 15,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 31
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 16,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 32
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 17,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 33
+  },
+  {
+    "fields": {  
+       "person_id":1,
+       "version_id": 1,
+      "hint_id": 18,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 34
+  },
+   {
+    "fields": {  
+       "person_id":2,
+       "version_id": 1,
+      "hint_id": 1,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 35
+  },
+   {
+    "fields": {  
+      "person_id":2,
+       "version_id": 1,
+      "hint_id": 2,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 36
+  },
+  {
+    "fields": {  
+        "person_id":2,
+       "version_id": 1,
+      "hint_id": 3,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 37
+  },
+  {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 4,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 38
+  },
+  {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 5,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 39
+  },
+  {
+    "fields": {  
+     "person_id":2,
+      "version_id": 1,
+      "hint_id": 6,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 40
+  },
+  {
+    "fields": {  
+     "person_id":2,
+      "version_id": 1,
+      "hint_id": 7,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 41
+  },
+  {
+    "fields": {  
+       "person_id":2,
+      "version_id": 1,
+      "hint_id": 8,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 42
+  },
+ {
+    "fields": {  
+      "person_id":2,
+      "version_id": 1,
+      "hint_id": 9,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 43
+  },    
+  {
+    "fields": {  
+     "person_id":2,
+      "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 44
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 4,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 45
+  },
+  {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 14,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 46
+  },
+  {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 12,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 47
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 19,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 48
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 23,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 49
+  },
+  {
+    "fields": {  
+      "person_id":3,
+      "version_id": 1,
+      "hint_id": 24,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 50
+  },
+  {
+    "fields": {  
+     "person_id":3,
+      "version_id": 1,
+      "hint_id": 15,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 51
+  },
+ {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 25,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 52
+  },
+ {
+    "fields": {  
+       "person_id":3,
+      "version_id": 1,
+      "hint_id": 12,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 53
+  },
+  {
+    "fields": {  
+       "person_id":4,
+      "version_id": 1,
+      "hint_id": 17,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 54
+  },
+  {
+    "fields": {  
+      "person_id":4,
+      "version_id": 1,
+      "hint_id": 21,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 55
+  },
+  {
+    "fields": {  
+      "person_id":4,
+      "version_id": 1,
+      "hint_id": 19,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 56
+  },
+  {
+    "fields": {  
+     "person_id":4,
+      "version_id": 1,
+      "hint_id": 18,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 57
+  },
+  {
+    "fields": {  
+      "person_id":4,
+      "version_id": 1,
+      "hint_id": 10,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 58
+  },
+  {
+    "fields": {  
+      "person_id":5,
+      "version_id": 1,
+      "hint_id": 19,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 59
+  },
+  {
+    "fields": {  
+      "person_id":5,
+      "version_id": 1,
+      "hint_id": 9,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 60
+  },
+ {
+    "fields": {  
+       "person_id":5,
+      "version_id": 1,
+      "hint_id": 1,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 61
+  },
+  {
+    "fields": {  
+     "person_id":5,
+      "version_id": 1,
+      "hint_id": 18,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 62
+  },
+  {
+    "fields": {  
+     "person_id":5,
+      "version_id": 1,
+      "hint_id": 21,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 63
+  },
+  {
+    "fields": {  
+      "person_id":5,
+      "version_id": 1,
+      "hint_id": 22,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 64
+  },
+  {
+    "fields": {  
+     "person_id":5,
+      "version_id": 1,
+      "hint_id": 13,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 65
+  },
+  {
+    "fields": {  
+      "person_id":6,
+      "version_id": 1,
+      "hint_id": 17,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 66
+  },
+  {
+    "fields": {  
+      "person_id":6,
+      "version_id": 1,
+      "hint_id": 16,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 67
+  },
+  {
+    "fields": {  
+      "person_id":6,
+      "version_id": 1,
+      "hint_id": 7,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 68
+  },
+  {
+    "fields": {  
+       "person_id":6,
+      "version_id": 1,
+      "hint_id": 6,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 69
+  },
+ {
+    "fields": {  
+      "person_id":6,
+      "version_id": 1,
+      "hint_id": 5,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 70
+  },
+ {
+    "fields": {  
+       "person_id":6,
+      "version_id": 1,
+      "hint_id": 8,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 71
+  },
+  {
+    "fields": {  
+      "person_id":6,
+      "version_id": 1,
+      "hint_id": 14,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 72
+  },
+ {
+    "fields": {  
+      "person_id":1,
+      "version_id": 1,
+      "hint_id": 17,
+      "crowd_size":30
+    },
+    "model": "experiment.profilehint",
+    "pk": 73
+  }
+]

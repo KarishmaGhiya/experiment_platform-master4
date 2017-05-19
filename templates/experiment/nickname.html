@@ -1,16 +1,19 @@
 {% extends 'experiment/base_exp.html' %}
 
 {% block content %}
+<!--
 <h2>In this task you will be working with other people. Please choose a nickname that
 
 represents you and that you feel comfortable sharing with other people during this
 
 task. </h2>
+!-->
 
     <form class="form-signin" method="post" action="{% url 'nickname' %}">
         
 <div id = "forum-frame" class="left" style="height:700px;width:1300px;border:7px groove #ccc;padding-left:20px; padding-right:20px;overflow: auto;">
 {% csrf_token %}
+<label>University of Maryland College Park</label><br/><br/>
 <fieldset>
 		<legend>Project Title </legend>
 		<label>Communication platform and group problem solving</label>
@@ -106,8 +109,9 @@ This research has been reviewed according to the University of Maryland, College
 		<h2>By proceeding with this survey, you indicate that you are at least 18 years of age. You have read this consent form or have had it read to you. <br/>Your questions have been answered to your satisfaction and you voluntarily agree to participate in this research study. <br/>You may print a copy of this consent form. If you agree to participate, please click ‘I Agree’ below.</h2>
 	</fieldset>
 
-	<input type="checkbox" value= "check-true" id="check" required autofocus>Agree<br/>
+	<input type="checkbox" value= "check-true" id="check" required autofocus> Agree<br/>
         <h2 class="form-signin-heading"><b>Choose a nickname:</b></h2>
+	<h2>In this task you will be working with other people. Please choose a nickname that represents you and that you feel comfortable sharing with other people during this task. </h2>
         <label for="inputUsername" class="sr-only">Nickname</label>
         <input type="text" name="nickname" style="width:20em;" maxlength="20em" id="inputUsername" class="form-control has-error" placeholder="Nickname"
                required autofocus><br/>

@@ -8,22 +8,14 @@
 
 	<fieldset >
 		<legend></legend>
-		<label>What is your group solution? </label><br/>
-		<textarea style="width:500px; height:100px;" id="grp_sol" name="group_soln" required autofocus></textarea>		
-	</fieldset>
-	<fieldset>
-		<legend></legend>
-		<label>What is your answer for the person's WIFE? </label>
-		<input type="text" id="inv_sol_wife" name = "inv_sol_wife" required autofocus><br/><br/>
-		<label>What is your answer for the person's JOB? </label>
-		<input type="text" id="inv_sol_job" name = "inv_sol_job" required autofocus><br/><br/>
-		<label>What is your answer for the person's CITY? </label>
-		<input type="text" id="inv_sol_city" name= "inv_sol_city" required autofocus>
+		<label>Which candidate did your group select? Group solution:  </label><br/>
+		<input type="text" id="grp_sol" name = "group_soln" required autofocus><br/><br/>
+			
 	</fieldset>
 	<fieldset>
 		<legend> </legend>
-		<label>Indicate the Degree of confidence you have in your solution: </label><br/>
-		<input type="radio" name="deg_conf"  value="0" > 0% (No confidence)&emsp;
+		<label>Indicate the Degree of confidence you have in your Group solution: </label><br/>
+		<input type="radio" name="deg_conf" value="0" required/> 0% (No confidence)&emsp;
 		<input type="radio" name="deg_conf" value="10"> 10% &emsp;
 		<input type="radio" name="deg_conf" value="20"> 20% &emsp;
 		<input type="radio" name="deg_conf" value="30"> 30% &emsp;
@@ -38,6 +30,14 @@
 	</fieldset>
 	<fieldset>
 		<legend></legend>
+		<label>Using all the information if it were only up to you, which candidate would you select? Individual solution: </label><br/>
+		<input type="text" id="inv_sol" name = "inv_sol" required autofocus><br/><br/>
+		<label>(Your individual solution can be the same as your group solution if you agree with your group. If your submitted individual solution is correct you will qualify to get a bonus, the amount of your bonus up to $1.00 will be dependent on the proportion of people in your group including yourself who have the correct individual solution).</label> 
+
+	</fieldset>
+	
+	<fieldset>
+		<legend></legend>
 		<label>If your group and individual solutions are different, please explain the difference:</label><br/>
 		<textarea style="width:500px; height:100px;" id="difference" name="difference" required autofocus></textarea>
 
@@ -45,7 +45,7 @@
 	
 	<fieldset>
 		<legend></legend>
-		<label>Indicate the degree to which you agree or disagree to the following statements: </label><br/>
+		<label>Please rate the degree to which you agree or disagree with the following statements: </label><br/>
 		<br/>
 		<table width="75%">
 		<col style="width:19%;">
@@ -70,7 +70,7 @@
 		</thead>
 		<tr>
 			<th>I would like to work with my same group again.</th>
-			<td><input type="radio" name="deg_agree1" value="7"> </td>
+			<td><input type="radio" name="deg_agree1" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree1" value="6"></td>
 			<td><input type="radio" name="deg_agree1" value="5"> </td>
 			<td><input type="radio" name="deg_agree1" value="4"> </td>
@@ -80,7 +80,7 @@
 		</tr>
 		<tr>
 			<th>I am satisfied with the way we shared information</th>
-			<td><input type="radio" name="deg_agree2" value="7"> </td>
+			<td><input type="radio" name="deg_agree2" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree2" value="6"></td>
 			<td><input type="radio" name="deg_agree2" value="5"> </td>
 			<td><input type="radio" name="deg_agree2" value="4"> </td>
@@ -90,7 +90,7 @@
 		</tr>
 		<tr>
 			<th>I am satisfied with how we communicated</th>
-			<td><input type="radio" name="deg_agree3" value="7"> </td>
+			<td><input type="radio" name="deg_agree3" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree3" value="6"></td>
 			<td><input type="radio" name="deg_agree3" value="5"> </td>
 			<td><input type="radio" name="deg_agree3" value="4"> </td>
@@ -100,7 +100,7 @@
 		</tr>
 		<tr>
 			<th>I am satisfied with how we reasoned together</th>
-			<td><input type="radio" name="deg_agree4" value="7"> </td>
+			<td><input type="radio" name="deg_agree4" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree4" value="6"></td>
 			<td><input type="radio" name="deg_agree4" value="5"> </td>
 			<td><input type="radio" name="deg_agree4" value="4"> </td>
@@ -110,7 +110,7 @@
 		</tr>
 		<tr>
 			<th>I am satisfied satisfied with how we reached agreement</th>
-			<td><input type="radio" name="deg_agree5" value="7"> </td>
+			<td><input type="radio" name="deg_agree5" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree5" value="6"></td>
 			<td><input type="radio" name="deg_agree5" value="5"> </td>
 			<td><input type="radio" name="deg_agree5" value="4"> </td>
@@ -120,7 +120,7 @@
 		</tr>
 		<tr>
 			<th>I am satisfied with our final group solution</th>
-			<td><input type="radio" name="deg_agree6" value="7"> </td>
+			<td><input type="radio" name="deg_agree6" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree6" value="6"></td>
 			<td><input type="radio" name="deg_agree6" value="5"> </td>
 			<td><input type="radio" name="deg_agree6" value="4"> </td>
@@ -130,7 +130,7 @@
 		</tr>
 		<tr>
 			<th>The solution was a collective effort</th>
-			<td><input type="radio" name="deg_agree7" value="7"> </td>
+			<td><input type="radio" name="deg_agree7" value="7" required/> </td>
 			<td><input type="radio" name="deg_agree7" value="6"></td>
 			<td><input type="radio" name="deg_agree7" value="5"> </td>
 			<td><input type="radio" name="deg_agree7" value="4"> </td>
@@ -149,8 +149,8 @@
 	<fieldset>
 
 		<legend></legend>
-		<label>What is your gender?</label>
-		<input type="radio" name="gender" value="male" >Male &emsp;
+		<label>What is your sex?</label>
+		<input type="radio" name="gender" value="male" required/>Male &emsp;
 		<input type="radio" name="gender" value="female">Female
 	</fieldset>
 	<fieldset>
@@ -165,7 +165,7 @@
 
 		<legend></legend>
 		<label>What is the highest level of education you have attained?</label></br>
-		<input type="radio" name="edu" value="less than 6">Less than 6 years</br>
+		<input type="radio" name="edu" value="less than 6" required/>Less than 6 years</br>
 		<input type="radio" name="edu" value="less than 12">Less than 12 years</br>
 		<input type="radio" name="edu" value="high school">High School</br>
 		<input type="radio" name="edu" value="some college">Some College</br>
@@ -177,13 +177,11 @@
 	<fieldset>
 
 		<legend></legend>
-		<label>Are you currently employed? Please check all that apply.</label><br/>
-			<input type="checkbox" name = "empl[]" id="school_full" value="school_full" >In school full time<br/>
+		<label>Are you currently employed? [Check all that apply]</label><br/>
+			<input type="checkbox" name = "empl[]" id="school_full" value="school_full">In school full time<br/>
 			<input type="checkbox" name="empl[]" id="school_part" value="school_part">In school part time<br/>
 			<input type="checkbox" name="empl[]" id="part_time" value="part_time">Part time job (less than 20 hours per week in total across jobs)<br/>
 			<input type="checkbox" name="empl[]" id="full_time" value="full_time">Full time job (more than 20 hours per week in total across jobs)<br/>
-
-		
 		
 	</fieldset>
 	<fieldset>

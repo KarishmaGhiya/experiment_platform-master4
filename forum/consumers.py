@@ -119,9 +119,6 @@ def ws_receive(message):
             log.debug('chat message handle=%s message=%s', 
             expuser.nickname, data['message'])
 
-
-          
-     
             parent = None
             log.debug(data['parentid'])
             if data['parentid']!=0:
@@ -148,8 +145,6 @@ def ws_disconnect(message):
 	#crowd_taskuser = Crowd.objects.get(id=int(label))
 	t = TaskUser(user=message.user,crowd=label,time_type='end')
 	t.save()
-	
-       
         Group('forum-'+label, channel_layer=message.channel_layer).discard(message.reply_channel)
     except (KeyError, Discussion.DoesNotExist):
         pass

@@ -4,7 +4,7 @@ import logging
 from channels import Group
 from channels.sessions import channel_session
 from .models import Room
-from experiment.models import ExpUser
+from experiment.models import ExpUser, TaskUser, Crowd
 from channels.auth import http_session, http_session_user, channel_session_user, channel_session_user_from_http
 
 log = logging.getLogger(__name__)
@@ -34,7 +34,8 @@ def ws_chat_connect(message):
 
     log.debug('chat connect room=%s client=%s:%s', 
         room.label, message['client'][0], message['client'][1])
-    
+    t = TaskUser(user=message.user,crowd=label,time_type='start')
+    t.save()
     # Need to be explicit about the channel layer so that testability works
     # This may be a FIXME?
     Group('chat-'+label, channel_layer=message.channel_layer).add(message.reply_channel)
@@ -90,6 +91,8 @@ def ws_chat_disconnect(message):
     try:
         label = message.channel_session['room']
         room = Room.objects.get(label=label)
+	t = TaskUser(user=message.user,crowd=label,time_type='end')
+	t.save()
         Group('chat-'+label, channel_layer=message.channel_layer).discard(message.reply_channel)
     except (KeyError, Room.DoesNotExist):
         pass

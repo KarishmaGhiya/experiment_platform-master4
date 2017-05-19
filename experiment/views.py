@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import ExpUser,Crowd_Members, Crowd, Problem, Consent_form, Questions
+from .models import ExpUser,Crowd_Members, Crowd, Consent_form, Questions
 from random import randint
 
 log = logging.getLogger(__name__)
@@ -80,7 +80,7 @@ def nickname(request):
             userexp = ExpUser.objects.create(user=myuser,nickname=nickname,expstage="wait_room",secret_code = s)	    
 	    consent_user = Consent_form.objects.create(user=myuser,agree='signed')
 
-            return redirect('experiment.views.wait_room')
+            return redirect('experiment.views.before_task')
 
         return render(request,'experiment/nickname.html')
     else:
@@ -105,13 +105,12 @@ def finish(request):
 def survey(request):
     if request.user.is_authenticated(): 
         u = ExpUser.objects.get(user=request.user)
-        u.stage = "survey"
+        u.expstage = "survey"
         u.save()
 	if request.method == "POST":
 		GrpSol = request.POST.get('group_soln')
-		InvSolWife = request.POST.get('inv_sol_wife')
-		InvSolJob = request.POST.get('inv_sol_job')
-		InvSolCity = request.POST.get('inv_sol_city')
+		InvSol = request.POST.get('inv_sol')
+		
 		DegConf = int(request.POST.get('deg_conf'))
 		Diff = request.POST.get('difference')
 		GrpExp1_1 = int(request.POST.get('deg_agree1'))
@@ -144,7 +143,7 @@ def survey(request):
 		Country = request.POST.get('country')
 		HITs = request.POST.get('HITs')
 		myuser = request.user
-		question_user = Questions.objects.create(worker=myuser,GrpSol=GrpSol, InvSolWife=InvSolWife, InvSolJob=InvSolJob, InvSolCity=InvSolCity, DegConf=DegConf, Diff=Diff,GrpExp1_1=GrpExp1_1,GrpExp1_2=GrpExp1_2, GrpExp1_3=GrpExp1_3,GrpExp1_4=GrpExp1_4,GrpExp1_5=GrpExp1_5,GrpExp1_6=GrpExp1_6,GrpExp1_7=GrpExp1_7,GrpExp2=GrpExp2, Sex=Sex,Age=Age, Edu=Edu,Empl_schoolFull=Empl_schoolFull,Empl_schoolPart =Empl_schoolPart,Empl_part =Empl_part,Empl_full=Empl_full,Country=Country,HITs=HITs )
+		question_user = Questions.objects.create(worker=myuser,GrpSol=GrpSol, InvSol=InvSol,  DegConf=DegConf, Diff=Diff,GrpExp1_1=GrpExp1_1,GrpExp1_2=GrpExp1_2, GrpExp1_3=GrpExp1_3,GrpExp1_4=GrpExp1_4,GrpExp1_5=GrpExp1_5,GrpExp1_6=GrpExp1_6,GrpExp1_7=GrpExp1_7,GrpExp2=GrpExp2, Sex=Sex,Age=Age, Edu=Edu,Empl_schoolFull=Empl_schoolFull,Empl_schoolPart =Empl_schoolPart,Empl_part =Empl_part,Empl_full=Empl_full,Country=Country,HITs=HITs )
 		return redirect('experiment.views.finish')	
 
 
@@ -157,7 +156,36 @@ def wait_room(request):
         return render(request,'waiting_room/wait_home.html')
     else:
         return redirect('experiment.views.home_page')
-    
+   
+def before_task(request):
+    if request.user.is_authenticated(): 
+		if request.method == "POST":
+			#check crowd id of empty crowd
+        		#which_crowd = Crowd.objects.Crowd_which_assign()
+			
+   			which_crowd = Crowd.objects.Crowd_which_assign()
+		        log.debug("which_crowd=%d",which_crowd)
+        		crowd =  Crowd.objects.get(id = which_crowd)     		
+			count_existing = Crowd_Members.objects.filter(crowd=crowd).count()
+			member_num = count_existing
+			cohortid = (count_existing)/3
+	        	crowd.members.create(user=request.user,crowd=crowd,cohort_id=cohortid,member_num=member_num)
+	        	eu = ExpUser.objects.get(user=request.user)
+	        	eu.expstage = "task"
+			eu.save()
+		
+			task_url=''
+            		if crowd.communication == '_forum':
+		            task_url='http://crowdps.umd.edu/forum/room'
+		        elif crowd.communication == '_chat':
+		            task_url='http://crowdps.umd.edu/chat/room'
+        		task_url += str(which_crowd)
+		
+			return redirect(task_url)
+
+      		return render(request,'experiment/wait_before_task.html')
+    else:
+        return redirect('experiment.views.home_page') 
 
 def forumapp(request):
 
@@ -167,9 +195,10 @@ def chatapp(request):
     return render(request,'chat/about.html')
     
 def error_page(request):
-    rproblem = Problem.objects.random()
-    cm = Crowd.objects.create(Problem=rproblem,size=3,communication="_forum")
-    m = "Problem"+str(rproblem.id)
+    #rproblem = Problem.objects.random()
+    version = 1
+    cm = Crowd.objects.create(version_id=version,size=3,communication="_forum")
+    m = "Problem"+str(version)
     return render(request,'experiment/error.html',{"message":m})
 
 

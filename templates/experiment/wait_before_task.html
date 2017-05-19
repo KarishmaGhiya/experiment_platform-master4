@@ -13,33 +13,16 @@
  	</div>	
     <div class="content container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style="align:center;line-height:2em;">
 	
-           <h3> In this task you will be working together with other people in your group to solve a challenging puzzle. When the task begins you will be given the puzzle (everyone in your group is
-
-working on the same puzzle) and some clues to help solve the puzzle. You will also
-
-be provided with a shared spreadsheet to mark down your guesses and answers
-
-(everyone in your group will be able to see and edit the same spreadsheet).</h3>
-
-<h3>You will also be able to communicate with other Turkers in your group. Depending
-
-on your condition you will either be able to communicate using a group chat or an
-
-online forum. You will be able to type and submit messages to your group. They will
-
-see your messages (and you will see theirs) soon after they are submitted. We
-
-encourage you to use the communication channel to work together to solve this
-
-challenging problem.</h3>
-
-<h3>Groups that successfully solve the problem will be given a bonus.</h3>
+           <p> <b>In this task you will be working together to identify the best person for a job.</b> When the task begins you will be given the test scores for 4 potential candidates on a few different skill tests (e.g. verbal abilities, numerical abilities). Everyone in your group is working on the same job assignment task and <b>together you have to recommend one candidate for the job.</b></p>
+<p><b>You will also be able to communicate with other Turkers in your group.</b> Depending on your condition you will either be able to communicate using a group chat or an online forum. You will be able to type and submit messages to your group. They will see your messages (and you will see theirs) soon after they are submitted. We encourage you to use the communication channel to work together to make the best possible recommendation for this challenging job assignment problem.</p>
+<p><b>Groups that successfully solve the problem will be given a bonus.</b></p>
+<p>Only proceed <b>if you intend to do the hit</b>, otherwise you're hurting other Turkers' chances.</p>
 <form method="post" action="{% url 'wait_before_task' %}">
 {% csrf_token %}
-<h3> Press the following Proceed button after you have read through the instructions carefully.</h3>
-<button class="btn btn-lg btn-primary btn-block" style="width:10em; height : 2em;text-align:center;float:center;"  type="submit">Proceed>></button>
+<p> Press the following Proceed button after you have read through the instructions carefully.</p>
+<button class="btn btn-primary btn-block" style="width:10em; height : 2em;text-align:center;float:center;"  type="submit">Proceed>></button>
 </form>
 
             </div>
