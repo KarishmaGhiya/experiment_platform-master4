@@ -75,9 +75,9 @@ class CrowdManager(models.Manager):
 		if which_crowd == 0 :
 			#write logic to assign chat/forum, size, task
 			## choose size of crowd
-			###crowd_size = [3,30]
-			###rsize = sample(crowd_size,1)[0]
-			rsize = 3
+			crowd_size = [3,30]
+			rsize = sample(crowd_size,1)[0]
+			###rsize = 3
 			rcom = FORUM_COMMUNICATION
 			if rsize==3:
 			    rcom = sample([CHAT_COMMUNICATION,FORUM_COMMUNICATION],1)[0]
